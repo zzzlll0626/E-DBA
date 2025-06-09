@@ -1,4 +1,4 @@
-# B03 - Education Data Bay Area (E-DBA)
+# Education Data Bay Area (E-DBA)
 
 ## Project Overview
 E-DBA is a lightweight Flask application designed to provide a secure data sharing platform for educational institutions. The system supports course information sharing, student identity authentication, thesis access, and online payment processing, while implementing different levels of user access control.
@@ -125,5 +125,6 @@ The application is configured with the following security settings:
 3. Private data provision (Level 3)
 
 ## Members
-**Leader**: Zhou Le 2230016081
-**Member**: Chen Yijing 2230016006
+**Leader**: Zhou Le
+
+**Member**: Chen Yijing
