@@ -124,14 +124,6 @@ The application is configured with the following security settings:
 2. Private data consumption (Level 2)
 3. Private data provision (Level 3)
 
-## Team Members
-**Team: B03**
-
+## Members
 **Leader**: Zhou Le 2230016081
-
-**Member**: 
-- Chen Yijing 2230016006
-- TAO Yiying 2230024189
-- HE Zhe 230026049
-- Li Lei 2230025035
-- ZHOU Leitai 2030026222
+**Member**: Chen Yijing 2230016006
