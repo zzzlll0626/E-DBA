@@ -124,7 +124,6 @@ The application is configured with the following security settings:
 2. Private data consumption (Level 2)
 3. Private data provision (Level 3)
 
-## Members
-**Leader**: Zhou Le
-
-**Member**: Chen Yijing
+## Developer
+1. 周乐
+2. 陈怡静
