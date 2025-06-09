@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}{{ organization.short_name }} Course - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="mb-3">{{ organization.full_name }} Course</h2>
+            </div>
+        </div>
+
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form action="{{ url_for('course.search_courses') }}" method="GET">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="keyword" placeholder="Enter the course name or key words">
+
+                                <input type="hidden" name="org_id" value="{{ organization.organization_id }}">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search me-1"></i> Search
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">Course List</h5>
+                    </div>
+                    <div class="card-body">
+                        {% if courses %}
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                            {% for course in courses %}
+                            <div class="col">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-header bg-light">
+                                        <h5 class="card-title mb-0">{{ course.title }}</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-muted">Unit: {{ course.units }}</h6>
+                                        <p class="card-text">
+                                            {% if course.description %}
+                                            {{ course.description|truncate(150) }}
+                                            {% else %}
+                                            <em>No Course Description</em>
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-0">
+                                        <a href="{{ url_for('course.view_course', course_id=course.course_id) }}" class="btn btn-sm btn-outline-primary w-100">
+                                            <i class="fas fa-info-circle me-1"></i> View Details
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i> The organization does not have any course Information
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 mb-5">
+            <div class="col-md-12">
+                <a href="{{ url_for('user.view_organization', org_id=organization.organization_id) }}"
+                   class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-1"></i> Back to organization
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

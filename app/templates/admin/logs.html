@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}Activity Logs - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Activity Logs</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {% if session.get('user_role') == 'O-Convener' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('organization.workspace') }}">Workspace</a></li>
+                    {% elif session.get('user_role') == 'E-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.eadmin_dashboard') }}">E-Admin Dashboard</a>
+                    </li>
+                    {% elif session.get('user_role') == 'Senior-E-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.senior_eadmin_dashboard') }}">Senior E-Admin
+                            Dashboard</a></li>
+                    {% elif session.get('user_role') == 'T-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.tadmin_dashboard') }}">T-Admin Dashboard</a>
+                    </li>
+                    {% endif %}
+                    <li class="breadcrumb-item active">Activity Logs</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Filter</h5>
+                </div>
+                <div class="card-body">
+                    <form id="filterForm"
+                        action="{{ url_for('admin.view_logs' if session.get('user_role') in ['E-Admin', 'Senior-E-Admin', 'T-Admin'] else 'organization.view_logs') }}"
+                        method="GET">
+                        <div class="row g-3">
+                            {% if organizations and session.get('user_role') in ['E-Admin', 'Senior-E-Admin', 'T-Admin']
+                            %}
+                            <div class="col-md-3">
+                                <label for="organization" class="form-label">Organization</label>
+                                <select class="form-select" id="organization" name="organization">
+                                    <option value="">All Organizations</option>
+                                    {% for org in organizations %}
+                                    <option value="{{ org.organization_id }}" {% if
+                                        organization==org.organization_id|string %}selected{% endif %}>{{ org.full_name
+                                        }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            {% endif %}
+
+                            <div class="col-md-3">
+                                <label for="activity" class="form-label">Activity Type</label>
+                                <select class="form-select" id="activity" name="activity">
+                                    <option value="">All Activities</option>
+                                    <option value="login" {% if activity=='login' %}selected{% endif %}>Login</option>
+                                    <option value="course_search" {% if activity=='course_search' %}selected{% endif %}>
+                                        Course Search</option>
+                                    <option value="student_auth" {% if activity=='student_auth' %}selected{% endif %}>
+                                        Student Verification</option>
+                                    <option value="thesis_search" {% if activity=='thesis_search' %}selected{% endif %}>
+                                        Thesis Search</option>
+                                    <option value="thesis_download" {% if activity=='thesis_download' %}selected{% endif
+                                        %}>Thesis Download</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="username" class="form-label">User</label>
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="User Email" value="{{ username }}">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="date" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="date" name="date" value="{{ date }}">
+                            </div>
+
+                            <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                <button type="submit" class="btn btn-primary">Filter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Log Records</h5>
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="exportLogs()">
+                        <i class="fas fa-file-export me-1"></i> Export
+                    </button>
+                </div>
+                <div class="card-body">
+                    {% if logs %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>User</th>
+                                    <th>Login Time</th>
+                                    <th>Logout Time</th>
+                                    <th>Service Accessed</th>
+                                    <th>Provider</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for log in logs %}
+                                <tr>
+                                    <td>{{ log.log_id }}</td>
+                                    <td>{{ log.user_email }}</td>
+                                    <td>{{ log.login_time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                    <td>{{ log.logout_time.strftime('%Y-%m-%d %H:%M:%S') if log.logout_time else '-' }}
+                                    </td>
+                                    <td>{{ log.service_accessed or '-' }}</td>
+                                    <td>{{ log.provider_organization_name or '-' }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> No logs matching the criteria.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const resetButton = document.querySelector('button[type="reset"]');
+        if (resetButton) {
+            resetButton.addEventListener('click', function () {
+                setTimeout(function () {
+                    document.getElementById('filterForm').submit();
+                }, 10);
+            });
+        }
+    });
+
+    function exportLogs() {
+        const form = document.getElementById('filterForm');
+        const formData = new FormData(form);
+        const params = new URLSearchParams(formData).toString();
+
+        let exportUrl = '{{ url_for("helper.export_logs") }}';
+        if (params) {
+            exportUrl += '?' + params;
+        }
+
+        window.location.href = exportUrl;
+    }
+</script>
+{% endblock %}

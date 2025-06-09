@@ -1,0 +1,162 @@
+{% macro render_field(field, label_text, placeholder='', required=False, help_text='') %}
+<div class="mb-3">
+    <label for="{{ field.id }}" class="form-label">{{ label_text }}{% if required %} <span
+            class="text-danger">*</span>{% endif %}</label>
+    {{ field(class="form-control", placeholder=placeholder, **kwargs) }}
+    {% if help_text %}
+    <div class="form-text">{{ help_text }}</div>
+    {% endif %}
+    {% if field.errors %}
+    <div class="invalid-feedback d-block">
+        <ul class="list-unstyled mb-0">
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro breadcrumb(items) %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+        {% for item in items %}
+        {% if loop.last %}
+        <li class="breadcrumb-item active" aria-current="page">{{ item.text }}</li>
+        {% else %}
+        <li class="breadcrumb-item"><a href="{{ item.url }}">{{ item.text }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+</nav>
+{% endmacro %}
+
+{% macro pagination(page, total_pages, endpoint) %}
+{% if total_pages > 1 %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item {{ 'disabled' if page == 1 else '' }}">
+            <a class="page-link" href="{{ url_for(endpoint, page=page-1, **kwargs) if page > 1 else '#' }}"
+                aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+
+        {% set start_page = [1, page - 2]|max %}
+        {% set end_page = [total_pages, page + 2]|min %}
+
+        {% if start_page > 1 %}
+        <li class="page-item">
+            <a class="page-link" href="{{ url_for(endpoint, page=1, **kwargs) }}">1</a>
+        </li>
+        {% if start_page > 2 %}
+        <li class="page-item disabled">
+            <span class="page-link">...</span>
+        </li>
+        {% endif %}
+        {% endif %}
+
+        {% for p in range(start_page, end_page + 1) %}
+        <li class="page-item {{ 'active' if p == page else '' }}">
+            <a class="page-link" href="{{ url_for(endpoint, page=p, **kwargs) }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+
+        {% if end_page < total_pages %} {% if end_page < total_pages - 1 %} <li class="page-item disabled">
+            <span class="page-link">...</span>
+            </li>
+            {% endif %}
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for(endpoint, page=total_pages, **kwargs) }}">{{ total_pages }}</a>
+            </li>
+            {% endif %}
+
+            <li class="page-item {{ 'disabled' if page == total_pages else '' }}">
+                <a class="page-link"
+                    href="{{ url_for(endpoint, page=page+1, **kwargs) if page < total_pages else '#' }}"
+                    aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+    </ul>
+</nav>
+{% endif %}
+{% endmacro %}
+
+{% macro service_type_name(type) %}
+{% if type == 'course_info' %}
+Course Information Sharing
+{% elif type == 'student_identity' %}
+Student Identity Verification
+{% elif type == 'thesis_sharing' %}
+Thesis Sharing
+{% else %}
+{{ type }}
+{% endif %}
+{% endmacro %}
+
+{% macro status_badge(status) %}
+{% if status == 'pending' %}
+<span class="badge bg-warning">Pending</span>
+{% elif status == 'approved' %}
+<span class="badge bg-success">Approved</span>
+{% elif status == 'rejected' %}
+<span class="badge bg-danger">Rejected</span>
+{% elif status == 'completed' %}
+<span class="badge bg-success">Completed</span>
+{% elif status == 'failed' %}
+<span class="badge bg-danger">Failed</span>
+{% else %}
+<span class="badge bg-secondary">{{ status }}</span>
+{% endif %}
+{% endmacro %}
+
+{% macro access_level_badge(level) %}
+{% if level == 1 %}
+<span class="badge bg-info">Public Data Access</span>
+{% elif level == 2 %}
+<span class="badge bg-primary">Private Data Consumer</span>
+{% elif level == 3 %}
+<span class="badge bg-success">Private Data Provider</span>
+{% else %}
+<span class="badge bg-secondary">Unknown Level ({{ level }})</span>
+{% endif %}
+{% endmacro %}
+
+{% macro card(title, content, footer='', header_class='', card_class='') %}
+<div class="card {{ card_class }} mb-4">
+    {% if title %}
+    <div class="card-header {{ header_class }}">
+        {{ title }}
+    </div>
+    {% endif %}
+    <div class="card-body">
+        {{ content }}
+    </div>
+    {% if footer %}
+    <div class="card-footer">
+        {{ footer }}
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro warning(message, dismissible=True) %}
+<div class="alert alert-warning {% if dismissible %}alert-dismissible fade show{% endif %}" role="alert">
+    <i class="fas fa-exclamation-triangle me-2"></i> {{ message }}
+    {% if dismissible %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro info(message, dismissible=True) %}
+<div class="alert alert-info {% if dismissible %}alert-dismissible fade show{% endif %}" role="alert">
+    <i class="fas fa-info-circle me-2"></i> {{ message }}
+    {% if dismissible %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Home - E-DBA Education Data Space{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold mb-3">Welcome to E-DBA</h1>
+            <p class="lead">E-DBA is a lightweight education data space platform that provides secure and convenient
+                data sharing for higher education institutions.</p>
+            <p>With our platform, you can:</p>
+            <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i>
+                    Securely share education data</li>
+                <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Verify
+                    student identity</li>
+                <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Access
+                    student academic records</li>
+                <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Share
+                    and download academic theses</li>
+                <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Search
+                    course information</li>
+            </ul>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg px-4 me-md-2">Register
+                    Organization</a>
+                <a href="{{ url_for('auth.login') }}" class="btn btn-outline-secondary btn-lg px-4">Login</a>
+            </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+            <img src="/static/img/logo.png" alt="E-DBA Logo" width="520" height="auto">
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <h2 class="text-center mb-4">Features & Services</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="card-title">Course Information Sharing</h4>
+                    <p class="card-text">View course offerings from universities, including content and credit details.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-id-card fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="card-title">Student Identity Verification</h4>
+                    <p class="card-text">Securely verify student identity to ensure data accuracy and reliability.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-book fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="card-title">Thesis Sharing</h4>
+                    <p class="card-text">Access and download high-quality academic theses to promote research exchange.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

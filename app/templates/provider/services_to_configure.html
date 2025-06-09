@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% from "macros.html" import service_type_name %}
+
+{% block title %}Service Configuration - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Service Configuration</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('provider.dashboard') }}">Provider Dashboard</a></li>
+                    <li class="breadcrumb-item active">Service Configuration</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">Unconfigured Services</h5>
+                </div>
+                <div class="card-body">
+                    {% if unconfigured_services %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Type</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for service in unconfigured_services %}
+                            <tr>
+                                <td>{{ service.name }}</td>
+                                <td>{{ service_type_name(service.type) }}</td>
+                                <td>{{ service.price }} RMB</td>
+                                <td><span class="badge bg-warning text-dark">Unconfigured</span></td>
+                                <td>
+                                    {% if service.type != 'course_info' %}
+                                    <a href="{{ url_for('provider.configure_api', service_id=service.service_id) }}"
+                                       class="btn btn-sm btn-primary">
+                                        <i class="fas fa-cog"></i> Configure
+                                    </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> No unconfigured services.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Configured Services</h5>
+                </div>
+                <div class="card-body">
+                    {% if configured_services %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Type</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for service in configured_services %}
+                            <tr>
+                                <td>{{ service.name }}</td>
+                                <td>{{ service_type_name(service.type) }}</td>
+                                <td>{{ service.price }} RMB</td>
+                                <td><span class="badge bg-success">Configured</span></td>
+                                <td>
+                                    {% if service.type != 'course_info' %}
+                                    <a href="{{ url_for('provider.configure_api', service_id=service.service_id) }}"
+                                       class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-edit"></i> Manage Configuration
+                                    </a>
+                                    {% else %}
+                                    <a href="{{ url_for('provider.manage_courses') }}"
+                                       class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-book"></i> Manage Courses
+                                    </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> No configured services.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

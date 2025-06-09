@@ -1,0 +1,479 @@
+{% extends "base.html" %}
+{% from "macros.html" import access_level_badge %}
+
+{% block title %}Membership Management - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Membership Management</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('organization.workspace') }}">Workspace</a></li>
+                    <li class="breadcrumb-item active">Membership Management</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Membership Fee Standard</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-header">Public Data Access (Level 1)</div>
+                                <div class="card-body">
+                                    {% if membership_fees.get(1) %}
+                                    {% if membership_fees.get(1).fee_type == 'flat_rate' %}
+                                    <p><strong>Payment method:</strong> Fixed Fee</p>
+                                    <p><strong>Fee:</strong> {{ membership_fees.get(1).fee_amount }} RMB/Organization</p>
+                                    {% else %}
+                                    <p><strong>Payment method:</strong> Fee per person</p>
+                                    <p><strong>Fee:</strong> {{ membership_fees.get(1).fee_amount }} RMB/Person</p>
+                                    {% endif %}
+                                    {% else %}
+                                    <p><strong>Payment method:</strong> Fee per person</p>
+                                    <p><strong>Fer:</strong> 10 RMB/Person</p>
+                                    {% endif %}
+                                    <p class="text-muted small">Allow access to public data, such as course information, etc.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-header">Private Data Consumption (Level 2)</div>
+                                <div class="card-body">
+                                    {% if membership_fees.get(2) %}
+                                    {% if membership_fees.get(2).fee_type == 'free' %}
+                                    <p><strong>Payment method:</strong> Free</p>
+                                    <p><strong>Fee:</strong> 0 RMB</p>
+                                    {% else %}
+                                    <p><strong>Payment method:</strong> Fee per person</p>
+                                    <p><strong>Fee:</strong> {{ membership_fees.get(2).fee_amount }} RMB/Person</p>
+                                    {% endif %}
+                                    {% else %}
+                                    <p><strong>Payment method:</strong> Fee per person</p>
+                                    <p><strong>Fee:</strong> 100 RMB/Person</p>
+                                    {% endif %}
+                                    <p class="text-muted small">Allows the use of paid services such as student identity verification and paper downloads</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-header">Private Data Provider (Level 3)</div>
+                                <div class="card-body">
+                                    {% if membership_fees.get(3) %}
+                                    {% if membership_fees.get(3).fee_type == 'free' %}
+                                    <p><strong>Payment method:</strong> Free</p>
+                                    <p><strong>Fee:</strong> 0 RMB</p>
+                                    {% else %}
+                                    <p><strong>Payment method:</strong> Fee per person</p>
+                                    <p><strong>Fee:</strong> {{ membership_fees.get(3).fee_amount }} RMB/Person</p>
+                                    {% endif %}
+                                    {% else %}
+                                    <p><strong>Payment method:</strong> Free</p>
+                                    <p><strong>Fee:</strong> 0 RMB</p>
+                                    {% endif %}
+                                    <p class="text-muted small">Allows configuration and provisioning of data services</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% if session.get('pending_members') %}
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <i class="fas fa-exclamation-circle me-2"></i> You have pending member import tasks, please complete the payment before continuing.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+                    <h5 class="mb-0">Members List</h5>
+                    <div>
+                        <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#importModal">
+                            <i class="fas fa-file-import me-1"></i> Import
+                        </button>
+                        <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#addMemberModal">
+                            <i class="fas fa-plus me-1"></i> Add
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {% if members %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Nae</th>
+                                <th>Email</th>
+                                <th>Access Level</th>
+                                <th>Paper download quota</th>
+                                <th>Operation</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for member in members %}
+                            <tr>
+                                <td>{{ member.name }}</td>
+                                <td>{{ member.email }}</td>
+                                <td>{{ access_level_badge(member.access_level) }}</td>
+                                <td>{{ member.quota }} RMB</td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <button type="button" class="btn btn-outline-primary edit-member-btn"
+                                                data-id="{{ member.member_id }}"
+                                                data-name="{{ member.name }}"
+                                                data-email="{{ member.email }}"
+                                                data-access="{{ member.access_level }}"
+                                                data-quota="{{ member.quota }}">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger delete-member-btn"
+                                                data-id="{{ member.member_id }}"
+                                                data-name="{{ member.name }}">
+                                            <i class="fas fa-trash-alt"></i> Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    {% if total_pages and total_pages > 1 %}
+                    <nav aria-label="Member list pagination" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item {{ 'disabled' if page == 1 else '' }}">
+                                <a class="page-link" href="{{ url_for('organization.manage_members', page=page-1) }}" aria-label="Last Page">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+
+                            {% for p in range(1, total_pages + 1) %}
+                            <li class="page-item {{ 'active' if p == page else '' }}">
+                                <a class="page-link" href="{{ url_for('organization.manage_members', page=p) }}">{{ p }}</a>
+                            </li>
+                            {% endfor %}
+
+                            <li class="page-item {{ 'disabled' if page == total_pages else '' }}">
+                                <a class="page-link" href="{{ url_for('organization.manage_members', page=page+1) }}" aria-label="Next Page">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    {% endif %}
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> There is no member record yet. Please click the "Add" button to add members, or import them via Excel file.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% if members %}
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Member Statistics</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Total members</h6>
+                                    <p class="display-6">{{ members|length }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Total quota</h6>
+                                    <p class="display-6">{{ members|sum(attribute='quota') }} RMB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Export member list</h6>
+                                    <a href="{{ url_for('helper.export_logs', organization_id=session.get('organization_id')) }}" class="btn btn-outline-primary">
+                                        <i class="fas fa-file-export me-1"></i> Export to Excel
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+<div class="modal fade" id="addMemberModal" tabindex="-1" aria-labelledby="addMemberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addMemberModalLabel">Add Members</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('organization.manage_members') }}" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="add">
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="form-text">You can use the format *@domain.com to represent a wildcard.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="access_right" class="form-label">Access Level <span class="text-danger">*</span></label>
+                        <select class="form-select" id="access_right" name="access_right" required>
+                            <option value="1">Public Data Access (Level 1)</option>
+                            <option value="2">Private Data Consumption (Level 2)</option>
+                            <option value="3">Private Data Provider (Level 3)</option>
+                        </select>
+                        <div class="form-text" id="fee_info">Membership fees will be displayed based on the level selected</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quota" class="form-label">Paper download quota (RMB)</label>
+                        <input type="number" class="form-control" id="quota" name="quota" min="0" value="0">
+                    </div>
+
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> After adding members, you may need to pay membership fees and the system will automatically jump to the payment page.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="editMemberModal" tabindex="-1" aria-labelledby="editMemberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editMemberModalLabel">Edit Member</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('organization.manage_members') }}" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="edit">
+                    <input type="hidden" id="edit_member_id" name="member_id">
+
+                    <div class="mb-3">
+                        <label for="edit_name" class="form-label">Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="edit_name" name="name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit_email" class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="edit_email" name="email" required>
+                        <div class="form-text">You can use the format *@domain.com to represent a wildcard.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit_access_right" class="form-label">Access Level <span class="text-danger">*</span></label>
+                        <select class="form-select" id="edit_access_right" name="access_right" required>
+                            <option value="1">Public Data Access (Level 1)</option>
+                            <option value="2">Private Data Consumption (Level 2)</option>
+                            <option value="3">Private Data Provider (Level 3)</option>
+                        </select>
+                        <div class="form-text" id="edit_fee_info">Additional fees may apply for higher levels of access</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit_quota" class="form-label">Paper download quota (RMB)</label>
+                        <input type="number" class="form-control" id="edit_quota" name="quota" min="0" value="0">
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> If you increase your member's access level, additional fees will apply.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="deleteMemberModal" tabindex="-1" aria-labelledby="deleteMemberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteMemberModalLabel">Delete member</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('organization.manage_members') }}" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="delete">
+                    <input type="hidden" id="delete_member_id" name="member_id">
+                    <p>Are you sure you want to delete the member<strong id="delete_member_name"></strong> ？</p>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> This operation is irreversible and membership fees will not be refunded after deletion.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="importModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="importModalLabel">Import members</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('organization.manage_members') }}" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="upload">
+
+                    <div class="mb-3">
+                        <label for="members_file" class="form-label">Select Excel file <span class="text-danger">*</span></label>
+                        <input type="file" class="form-control" id="members_file" name="members_file" accept=".xlsx,.xls" required>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Please make sure that the Excel file contains the necessary columns: name, email, access_right and quota.
+                        <div class="mt-2">
+                            <a href="{{ url_for('helper.export_template', type='members') }}" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-download me-1"></i> Download the template
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> Importing members may require payment of membership fees. The system will automatically calculate the total fee and jump to the payment page.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Import</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="paymentSuccessModal" tabindex="-1" aria-labelledby="paymentSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="paymentSuccessModalLabel">Payment successful</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
+                    <h4>Membership fee payment successful!</h4>
+                    <p>Your member has been added or updated successfully.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var editButtons = document.querySelectorAll('.edit-member-btn');
+        for (var i = 0; i < editButtons.length; i++) {
+            editButtons[i].addEventListener('click', function() {
+
+                var id = this.getAttribute('data-id');
+                var name = this.getAttribute('data-name');
+                var email = this.getAttribute('data-email');
+                var access = this.getAttribute('data-access');
+                var quota = this.getAttribute('data-quota');
+
+
+                document.getElementById('edit_member_id').value = id;
+                document.getElementById('edit_name').value = name;
+                document.getElementById('edit_email').value = email;
+                document.getElementById('edit_access_right').value = access;
+                document.getElementById('edit_quota').value = quota;
+
+
+                var editModal = new bootstrap.Modal(document.getElementById('editMemberModal'));
+                editModal.show();
+            });
+        }
+
+
+        var deleteButtons = document.querySelectorAll('.delete-member-btn');
+        for (var i = 0; i < deleteButtons.length; i++) {
+            deleteButtons[i].addEventListener('click', function() {
+
+                var id = this.getAttribute('data-id');
+                var name = this.getAttribute('data-name');
+
+
+                document.getElementById('delete_member_id').value = id;
+                document.getElementById('delete_member_name').textContent = name;
+
+
+                var deleteModal = new bootstrap.Modal(document.getElementById('deleteMemberModal'));
+                deleteModal.show();
+            });
+        }
+    });
+</script>
+{% endblock %}

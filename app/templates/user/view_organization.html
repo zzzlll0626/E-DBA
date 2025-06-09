@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% from "macros.html" import status_badge, access_level_badge, card %}
+
+{% block title %}{{ organization.full_name }} - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('user.dashboard') }}">my dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ organization.full_name }}</li>
+                </ol>
+            </nav>
+            <h2 class="mb-3">{{ organization.full_name }} <small class="text-muted">({{ organization.short_name }})</small></h2>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">organization information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">complete name:</div>
+                        <div class="col-md-8">{{ organization.full_name }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">abbreviation:</div>
+                        <div class="col-md-8">{{ organization.short_name }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">login eamil:</div>
+                        <div class="col-md-8">{{ organization.registration_email }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">status:</div>
+                        <div class="col-md-8">{{ status_badge(organization.status) }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">fast operation</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        {% if services %}
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#servicesModal">
+                                <i class="fas fa-cogs me-2"></i>view service
+                            </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    {% if services %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">provided service</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        {% for service in services %}
+                            {% if service.type in ['course_info', 'thesis_sharing'] or (service.type in ['student_identity', 'student_record'] and user.access_level >= 2) %}
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ service.name }}</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">
+                                            {% if service.type == 'course_info' %}
+                                            course information sharing
+                                            {% elif service.type == 'student_identity' %}
+                                            student identity verification
+                                            {% elif service.type == 'student_record' %}
+                                            studentGPA Record
+                                            {% elif service.type == 'thesis_sharing' %}
+                                            thesis sharing
+                                            {% else %}
+                                            {{ service.type }}
+                                            {% endif %}
+                                        </h6>
+                                        <p class="card-text">{{ service.description or 'no description' }}</p>
+                                        {% if service.price > 0 %}
+                                            {% if service.type == 'thesis_sharing' %}
+                                                <p class="card-text"><strong>thesis download price:</strong> {{ service.price }} yuan/article</p>
+                                            {% elif service.type == 'student_identity' %}
+                                                <p class="card-text"><strong>verification price:</strong> {{ service.price }} yuan/time</p>
+                                            {% else %}
+                                                <p class="card-text"><strong>price:</strong> {{ service.price }} yuan</p>
+                                            {% endif %}
+                                        {% else %}
+                                            <p class="card-text"><span class="badge bg-success">free</span></p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="card-footer">
+                                        {% if service.type == 'student_identity' and user.access_level >= 2 %}
+                                            <a href="{{ url_for('consumer.student_auth', service_id=service.service_id) }}"
+                                               class="btn btn-sm btn-primary">use service</a>
+                                        {% elif service.type == 'student_record' and user.access_level >= 2 %}
+                                            <a href="{{ url_for('consumer.student_record', service_id=service.service_id) }}"
+                                               class="btn btn-sm btn-primary">use service</a>
+                                        {% elif service.type == 'thesis_sharing' %}
+                                            <a href="{{ url_for('consumer.thesis_search', service_id=service.service_id) }}"
+                                               class="btn btn-sm btn-primary">use service</a>
+                                        {% elif service.type == 'course_info' %}
+                                            <a href="{{ url_for('course.organization_courses', org_id=service.organization_id) }}"
+                                               class="btn btn-sm btn-primary">use service</a>
+                                        {% else %}
+                                            <a href="#" class="btn btn-sm btn-primary disabled">use service</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    
+    {% if services %}
+        <div class="modal fade" id="servicesModal" tabindex="-1" aria-labelledby="servicesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="servicesModalLabel">{{ organization.full_name }} provided service</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>service name</th>
+                                        <th>type</th>
+                                        <th>price</th>
+                                        <th>operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for service in services %}
+                                        {% if service.type in ['course_info', 'thesis_sharing'] or (service.type in ['student_identity', 'student_record'] and user.access_level >= 2) %}
+                                        <tr>
+                                            <td>{{ service.name }}</td>
+                                            <td>
+                                                {% if service.type == 'course_info' %}
+                                                    course information sharing
+                                                {% elif service.type == 'student_identity' %}
+                                                    student identity verification
+                                                {% elif service.type == 'student_record' %}
+                                                    studentGPA Record
+                                                {% elif service.type == 'thesis_sharing' %}
+                                                    thesis sharing
+                                                {% else %}
+                                                    {{ service.type }}
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if service.price > 0 %}
+                                                    {{ service.price }} yuan
+                                                {% else %}
+                                                    <span class="badge bg-success">free</span>
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if service.type == 'thesis_sharing'%}
+                                                    <a href="{{ url_for('consumer.thesis_search', service_id=service.service_id) }}"
+                                                       class="btn btn-sm btn-primary">use service</a>
+                                                {% elif service.type == 'student_identity' and user.access_level >= 2 %}
+                                                    <a href="{{ url_for('consumer.student_auth', service_id=service.service_id) }}"
+                                                       class="btn btn-sm btn-primary">use service</a>
+                                                {% elif service.type == 'student_record' and user.access_level >= 2 %}
+                                                    <a href="{{ url_for('consumer.student_record', service_id=service.service_id) }}"
+                                                       class="btn btn-sm btn-primary">use service</a>
+                                                {% elif service.type == 'course_info' %}
+                                                    <a href="{{ url_for('course.organization_courses', org_id=service.organization_id) }}"
+                                                       class="btn btn-sm btn-primary">use service</a>
+                                                {% else %}
+                                                    <a href="#" class="btn btn-sm btn-primary disabled">use service</a>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row mt-4 mb-5">
+        <div class="col-md-12">
+            <a href="{{ url_for('user.dashboard') }}" class="btn btn-outline-secondary">
+                <i class="fas fa-home me-1"></i> return to dashboard
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

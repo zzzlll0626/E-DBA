@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}View Thesis - {{ title }} - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">{{ title }}</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('user.dashboard') }}">My Dashboard</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('user.view_organization', org_id=provider_organization.organization_id) }}">{{
+                            provider_organization.short_name }}</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('consumer.thesis_search', service_id=service.service_id) }}">Thesis
+                            Search</a></li>
+                    <li class="breadcrumb-item active">View Thesis</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">{{ title }}</h5>
+                    <div>
+                        {% if has_download_access %}
+                        <form action="{{ url_for('consumer.thesis_download', service_id=service.service_id) }}"
+                            method="POST" class="d-inline">
+                            <input type="hidden" name="title" value="{{ title }}">
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                <i class="fas fa-download me-1"></i> Download Thesis
+                            </button>
+                        </form>
+                        {% else %}
+                        <button type="button" class="btn btn-sm btn-secondary disabled" data-bs-toggle="tooltip"
+                            title="You do not have download permission">
+                            <i class="fas fa-download me-1"></i> Download Thesis
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="embed-responsive" style="height: 800px;">
+                        <iframe class="embed-responsive-item w-100 h-100"
+                            src="data:application/pdf;base64,{{ pdf_data }}" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{{ url_for('consumer.thesis_search', service_id=service.service_id) }}"
+                        class="btn btn-secondary">
+                        <i class="fas fa-arrow-left me-1"></i> Back to Search Results
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

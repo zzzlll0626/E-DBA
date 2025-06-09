@@ -1,0 +1,514 @@
+{% extends "base.html" %}
+{% from "macros.html" import service_type_name %}
+
+{% block title %}Service Management - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Service Management</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('organization.workspace') }}">Workspace</a></li>
+                    <li class="breadcrumb-item active">Service Management</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+                    <h5 class="mb-0">Services List</h5>
+                    <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#addServiceModal">
+                        <i class="fas fa-plus me-1"></i> Adding Services
+                    </button>
+                </div>
+                <div class="card-body">
+                    {% if services %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Type</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>public</th>
+                                <th>Operation</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for service in services %}
+                            <tr>
+                                <td>{{ service.name }}</td>
+                                <td>{{ service_type_name(service.type) }}</td>
+                                <td>{{ service.price }} RMB</td>
+                                <td>
+                                    {% if service.is_configured %}
+                                    <span class="badge bg-success">Configured</span>
+                                    {% else %}
+                                    <span class="badge bg-warning text-dark">Not configured</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if service.is_public %}
+                                    <span class="badge bg-success">Public</span>
+                                    {% else %}
+                                    <span class="badge bg-secondary">Private</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <button type="button" class="btn btn-outline-primary edit-service-btn"
+                                                data-id="{{ service.service_id }}"
+                                                data-name="{{ service.name }}"
+                                                data-type="{{ service.type }}"
+                                                data-price="{{ service.price }}"
+                                                data-description="{{ service.description }}"
+                                                data-public="{{ 'true' if service.is_public else 'false' }}">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                        {% if not service.is_configured and service.type != 'course_info' and is_provider %}
+                                        <a href="{{ url_for('provider.configure_api', service_id=service.service_id) }}" class="btn btn-outline-success">
+                                            <i class="fas fa-cog"></i> Configure
+                                        </a>
+                                        {% endif %}
+                                        {% if service.type == 'thesis_sharing' %}
+                                        <button type="button"
+                                                class="btn btn-outline-info access-service-btn"
+                                                data-id="{{ service.service_id }}"
+                                                data-name="{{ service.name }}"
+                                                data-type="{{ service.type }}">
+                                            <i class="fas fa-users"></i> Access Rights
+                                        </button>
+                                        {% endif %}
+                                        <button type="button" class="btn btn-outline-danger remove-service-btn"
+                                                data-id="{{ service.service_id }}"
+                                                data-name="{{ service.name }}">
+                                            <i class="fas fa-trash-alt"></i> Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> There is no service record. Please click the "Add Service" button to create a service.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Course information sharing</h5>
+                </div>
+                <div class="card-body">
+                    <p>Provides information about your organization's courses, including course titles, units, and descriptions.</p>
+                    <p>This service is free and open to all organizations, and no API configuration is required.</p>
+
+                    {% if session.get('user_role') == 'O-Convener' %}
+
+                    <a href="{{ url_for('course.organization_courses', org_id=session.get('organization_id')) }}" class="btn btn-outline-primary">
+                        <i class="fas fa-eye me-1"></i> View Course
+                    </a>
+                    {% else %}
+
+                    <a href="{{ url_for('provider.manage_courses') }}" class="btn btn-primary">
+                        <i class="fas fa-book me-1"></i> Management Courses
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Student Identity Verification</h5>
+                </div>
+                <div class="card-body">
+                    <p>Provide student identity verification services to verify whether the student's information is correct.</p>
+                    <p>This service requires configuration of the API interface. Access fees can be set by yourself.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Paper Sharing</h5>
+                </div>
+                <div class="card-body">
+                    <p>Provide paper retrieval and download services.</p>
+                    <p>This service requires configuration of the API interface. Access fees can be set by yourself.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="addServiceModal" tabindex="-1" aria-labelledby="addServiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addServiceModalLabel">Add Services</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('organization.manage_services') }}" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="add">
+
+                    <div class="mb-3">
+                        <label for="service_type" class="form-label">Service Type <span class="text-danger">*</span></label>
+                        <select class="form-select" id="service_type" name="service_type" required>
+                            <option value="">-- Select Service Type --</option>
+                            {% for type in service_types %}
+                            <option value="{{ type.id }}">{{ type.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="service_name" class="form-label">Service Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="service_name" name="service_name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Service Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                    </div>
+
+                    <div class="mb-3" id="priceSection">
+                        <label for="price" class="form-label">Price (RMB)</label>
+                        <input type="number" class="form-control" id="price" name="price" min="0" value="0" step="0.01">
+                        <div class="form-text" id="priceHint">Set to 0 for free. For paper sharing services, this price is the download price of each paper.</div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="is_public" name="is_public" checked>
+                        <label class="form-check-label" for="is_public">Public Services</label>
+                        <div class="form-text">Public services can be accessed by all organizations, while private services require separate authorization.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="editServiceModal" tabindex="-1" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editServiceModalLabel">Edit Services</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('organization.manage_services') }}" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="edit">
+                    <input type="hidden" id="edit_service_id" name="service_id">
+
+                    <div class="mb-3">
+                        <label for="edit_service_name" class="form-label">Service Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="edit_service_name" name="service_name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit_description" class="form-label">Service Description</label>
+                        <textarea class="form-control" id="edit_description" name="description" rows="3"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit_price" class="form-label">Price (RMB)</label>
+                        <input type="number" class="form-control" id="edit_price" name="price" min="0" value="0" step="0.01">
+                        <div class="form-text">Set to 0 for free.</div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="edit_is_public" name="is_public">
+                        <label class="form-check-label" for="edit_is_public">Public Services</label>
+                        <div class="form-text">Public services can be accessed by all organizations, while private services require separate authorization.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="removeServiceModal" tabindex="-1" aria-labelledby="removeServiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="removeServiceModalLabel">Delete service</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('organization.manage_services') }}" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="remove">
+                    <input type="hidden" id="remove_service_id" name="service_id">
+                    <p>Are you sure you want to delete the service<strong id="remove_service_name"></strong> ？</p>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> This operation is irreversible and the service will be inaccessible after deletion.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Dlete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="accessServiceModal" tabindex="-1" aria-labelledby="accessServiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="accessServiceModalLabel">Service Access Rights</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('organization.manage_services') }}" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="access">
+                    <input type="hidden" id="access_service_id" name="service_id">
+
+                    <p>Setting up the service <strong id="access_service_name"></strong> download permissions:</p>
+
+                    <div class="mb-3">
+                        <label class="form-label">Organizations allowed to download</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check_all_download_orgs">
+                            <label class="form-check-label" for="check_all_download_orgs">
+                                Select All/Deselect All
+                            </label>
+                        </div>
+                        <hr>
+                        <div style="max-height: 200px; overflow-y: auto;">
+                            <table class="table table-sm">
+                                <thead>
+                                <tr>
+                                    <th>Organization</th>
+                                    <th>Download permissions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for org in organizations %}
+                                <tr>
+                                    <td>{{ org.short_name }}</td>
+                                    <td>
+                                        <input class="form-check-input download-org-checkbox" type="checkbox"
+                                               id="download_org_{{ org.organization_id }}"
+                                               name="download_organizations"
+                                               value="{{ org.organization_id }}">
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const serviceTypeSelect = document.getElementById('service_type');
+        const priceHint = document.getElementById('priceHint');
+
+        if (serviceTypeSelect && priceHint) {
+            serviceTypeSelect.addEventListener('change', function() {
+                if (this.value === 'course_info') {
+                    const priceInput = document.getElementById('price');
+                    priceInput.value = '0';
+                    priceInput.disabled = true;
+                    priceHint.textContent = 'The course information sharing service is free and does not require a price to be set.';
+
+
+                    const isPublicCheckbox = document.getElementById('is_public');
+                    isPublicCheckbox.checked = true;
+                    isPublicCheckbox.disabled = true;
+                } else {
+                    const priceInput = document.getElementById('price');
+                    priceInput.disabled = false;
+
+                    const isPublicCheckbox = document.getElementById('is_public');
+                    isPublicCheckbox.disabled = false;
+                    if (this.value === 'thesis_sharing') {
+                        priceHint.textContent = 'Set the price for downloading the paper. This fee will be charged for each paper. Setting this to 0 means it is free to download.';
+                    } else if (this.value === 'student_identity') {
+                        priceHint.textContent = 'Set the price for student identity verification. Each verification will be charged this fee. Set to 0 for free.';
+                    } else {
+                        priceHint.textContent = 'Set to 0 for free.';
+                    }
+                }
+            });
+        }
+
+
+        const editButtons = document.querySelectorAll('.edit-service-btn');
+        editButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+                const price = this.getAttribute('data-price');
+                const description = this.getAttribute('data-description');
+                const isPublic = this.getAttribute('data-public') === 'true';
+                const type = this.getAttribute('data-type');
+
+                document.getElementById('edit_service_id').value = id;
+                document.getElementById('edit_service_name').value = name;
+                document.getElementById('edit_price').value = price;
+                document.getElementById('edit_description').value = description;
+                document.getElementById('edit_is_public').checked = isPublic;
+
+
+                const editPriceInput = document.getElementById('edit_price');
+                const editIsPublicCheckbox = document.getElementById('edit_is_public');
+
+                if (type === 'course_info') {
+                    editPriceInput.value = '0';
+                    editPriceInput.disabled = true;
+                    editIsPublicCheckbox.checked = true;
+                    editIsPublicCheckbox.disabled = true;
+                } else {
+                    editPriceInput.disabled = false;
+                    editIsPublicCheckbox.disabled = false;
+                }
+                const editModal = new bootstrap.Modal(document.getElementById('editServiceModal'));
+                editModal.show();
+            });
+        });
+
+
+        const removeButtons = document.querySelectorAll('.remove-service-btn');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+
+                document.getElementById('remove_service_id').value = id;
+                document.getElementById('remove_service_name').textContent = name;
+
+                const removeModal = new bootstrap.Modal(document.getElementById('removeServiceModal'));
+                removeModal.show();
+            });
+        });
+
+
+        const accessButtons = document.querySelectorAll('.access-service-btn');
+        if (accessButtons) {
+            accessButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const id = this.getAttribute('data-id');
+                    const name = this.getAttribute('data-name');
+                    const type = this.getAttribute('data-type');
+
+
+                    if (type !== 'thesis_sharing') {
+                        alert('Only paper sharing services require download permissions.');
+                        return;
+                    }
+
+                    document.getElementById('access_service_id').value = id;
+                    document.getElementById('access_service_name').textContent = name;
+
+
+                    document.querySelectorAll('.download-org-checkbox').forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+
+
+                    fetch(`/organization/get_service_permissions/${id}`)
+                        .then(response => response.json())
+                        .then(data => {
+
+                            if (data.download_organizations) {
+                                data.download_organizations.forEach(orgId => {
+                                    const downloadCheckbox = document.getElementById(`download_org_${orgId}`);
+                                    if (downloadCheckbox) {
+                                        downloadCheckbox.checked = true;
+                                    }
+                                });
+                            }
+
+
+                            const accessModal = new bootstrap.Modal(document.getElementById('accessServiceModal'));
+                            accessModal.show();
+                        })
+                        .catch(error => {
+                            console.error('Failed to obtain permission data:', error);
+
+                            const accessModal = new bootstrap.Modal(document.getElementById('accessServiceModal'));
+                            accessModal.show();
+                        });
+                });
+            });
+        }
+
+
+        const checkAllViewOrgs = document.getElementById('check_all_view_orgs');
+        if (checkAllViewOrgs) {
+            checkAllViewOrgs.addEventListener('change', function() {
+                const checked = this.checked;
+                document.querySelectorAll('.view-org-checkbox').forEach(checkbox => {
+                    checkbox.checked = checked;
+
+                    if (!checked) {
+                        const orgId = checkbox.value;
+                        const downloadCheckbox = document.getElementById('download_org_' + orgId);
+                        if (downloadCheckbox) {
+                            downloadCheckbox.checked = false;
+                        }
+                    }
+                });
+            });
+        }
+
+
+        const checkAllDownloadOrgs = document.getElementById('check_all_download_orgs');
+        if (checkAllDownloadOrgs) {
+            checkAllDownloadOrgs.addEventListener('change', function () {
+                const checked = this.checked;
+                document.querySelectorAll('.download-org-checkbox').forEach(checkbox => {
+                    checkbox.checked = checked;
+                });
+            });
+        }
+
+    });
+</script>
+{% endblock %}

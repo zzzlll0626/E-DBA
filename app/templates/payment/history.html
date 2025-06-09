@@ -1,0 +1,128 @@
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">My Payment History</h5>
+            </div>
+            <div class="card-body">
+                {% if payments %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Payment ID</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                            <th>Payment Methods</th>
+                            <th>Payee</th>
+                            <th>state</th>
+                            <th>Time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for payment in payments %}
+                        <tr>
+                            <td>{{ payment.payment_id }}</td>
+                            <td>{{ payment.amount }} RMB</td>
+                            <td>
+                                {% if payment.payment_type == 'membership_fee' %}
+                                Membership Fees
+                                {% elif payment.payment_type == 'service_fee' %}
+                                Service Fee
+                                {% elif payment.payment_type == 'thesis_download' %}
+                                Download the paper
+                                {% elif payment.payment_type == 'identity_auth' %}
+                                Authentication
+                                {% else %}
+                                {{ payment.payment_type }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if payment.payment_method == 'transfer' %}
+                                Bank transfer
+                                {% elif payment.payment_method == 'quota' %}
+                                Quota Payment
+                                {% else %}
+                                {{ payment.payment_method }}
+                                {% endif %}
+                            </td>
+                            <td>{{ payment.receiver_organization_name }}</td>
+                            <td>
+                                {% if payment.status == 'completed' %}
+                                <span class="badge bg-success">Completed</span>
+                                {% elif payment.status == 'pending' %}
+                                <span class="badge bg-warning text-dark">Processing</span>
+                                {% elif payment.status == 'failed' %}
+                                <span class="badge bg-danger">Fail</span>
+                                {% else %}
+                                <span class="badge bg-secondary">{{ payment.status }}</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ payment.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i> You have no payment record.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% if transactions %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">Organizing transaction records</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Amount</th>
+                            <th>Sender</th>
+                            <th>Receiver</th>
+                            <th>Status</th>
+                            <th>Time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for transaction in transactions %}
+                        <tr>
+                            <td>{{ transaction.transaction_id }}</td>
+                            <td>{{ transaction.amount }} RMB</td>
+                            <td>{{ transaction.from_organization_name }}</td>
+                            <td>{{ transaction.to_organization_name }}</td>
+                            <td>
+                                {% if transaction.status == 'success' %}
+                                <span class="badge bg-success">success</span>
+                                {% elif transaction.status == 'failed' %}
+                                <span class="badge bg-danger">Fail</span>
+                                {% if transaction.reason %}
+                                <i class="fas fa-info-circle ms-1" data-bs-toggle="tooltip" title="{{ transaction.reason }}"></i>
+                                {% endif %}
+                                {% else %}
+                                <span class="badge bg-secondary">{{ transaction.status }}</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ transaction.transaction_time.strftime('%Y-%m-%d %H:%M') }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}Student Verification - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Student Verification</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('user.dashboard') }}">My Dashboard</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('user.view_organization', org_id=provider_organization.organization_id) }}">{{
+                            provider_organization.short_name }}</a></li>
+                    <li class="breadcrumb-item active">Student Verification</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">{{ service.name }}</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Service Description:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ service.description or 'No description' }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Provider Organization:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ provider_organization.full_name }} ({{ provider_organization.short_name }})
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <strong>Service Price:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {% if service.price > 0 %}
+                            {{ service.price }} RMB / time
+                            {% else %}
+                            <span class="badge bg-success">Free</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <ul class="nav nav-tabs card-header-tabs" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active text-dark" id="individual-tab" data-bs-toggle="tab"
+                                data-bs-target="#individual" type="button" role="tab" aria-controls="individual"
+                                aria-selected="true">Individual Verification</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-dark" id="batch-tab" data-bs-toggle="tab"
+                                data-bs-target="#batch" type="button" role="tab" aria-controls="batch"
+                                aria-selected="false">Batch Verification</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="authTabsContent">
+                        <div class="tab-pane fade show active" id="individual" role="tabpanel"
+                            aria-labelledby="individual-tab">
+                            <form action="{{ url_for('consumer.student_auth', service_id=service.service_id) }}"
+                                method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="auth_type" value="individual">
+                                {% if input_fields %}
+                                {% for field_name, field_type in input_fields.items() %}
+                                <div class="mb-3">
+                                    <label for="{{ field_name }}" class="form-label">{{ field_name|title }} <span
+                                            class="text-danger">*</span></label>
+                                    {% if field_type == 'file' or field_name == 'photo' %}
+                                    <input type="file" class="form-control" id="{{ field_name }}"
+                                        name="{{ field_name }}" required>
+                                    {% else %}
+                                    <input type="text" class="form-control" id="{{ field_name }}"
+                                        name="{{ field_name }}" required>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                                {% else %}
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Student Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="id" class="form-label">Student ID <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="id" name="id" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="photo" class="form-label">Photo</label>
+                                    <input type="file" class="form-control" id="photo" name="photo">
+                                    <div class="form-text">Uploading a student photo can improve verification accuracy
+                                    </div>
+                                </div>
+                                {% endif %}
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-check-circle me-1"></i> Verify
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="batch" role="tabpanel" aria-labelledby="batch-tab">
+                            <form action="{{ url_for('consumer.student_auth_batch', service_id=service.service_id) }}"
+                                method="POST" enctype="multipart/form-data">
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle me-2"></i> Use an Excel file to batch verify student
+                                    identities. The file must include the same columns as individual verification
+                                    (Student Name, Student ID, etc.).
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="batch_file" class="form-label">Excel File <span
+                                            class="text-danger">*</span></label>
+                                    <input type="file" class="form-control" id="batch_file" name="batch_file"
+                                        accept=".xlsx,.xls" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <a href="{{ url_for('helper.export_template', type='student_auth') }}"
+                                        class="btn btn-outline-secondary btn-sm">
+                                        <i class="fas fa-download me-1"></i> Download Template
+                                    </a>
+                                </div>
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-check-circle me-1"></i> Batch Verify
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var authTabs = document.getElementById('authTabs');
+        var tabs = new bootstrap.Tab(authTabs);
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Student Authentication Result - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Student Authentication Result</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('user.dashboard') }}">My Dashboard</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('user.view_organization', org_id=provider_organization.organization_id) }}">{{
+                            provider_organization.short_name }}</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('consumer.student_auth', service_id=service.service_id) }}">Student
+                            Authentication</a></li>
+                    <li class="breadcrumb-item active">Result</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Result</h5>
+                </div>
+                <div class="card-body">
+                    {% if 'error' in result %}
+                    <div class="alert alert-danger text-center">
+                        <i class="fas fa-times-circle fa-3x mb-3"></i>
+                        <h4>Authentication Failed</h4>
+                        <p>{{ result.message }}</p>
+                    </div>
+                    {% elif result.status == 'success' %}
+                    <div class="alert alert-success text-center">
+                        <i class="fas fa-check-circle fa-3x mb-3"></i>
+                        <h4>Authentication Successful</h4>
+                        <p>{{ result.message }}</p>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-danger text-center">
+                        <i class="fas fa-times-circle fa-3x mb-3"></i>
+                        <h4>Authentication Failed</h4>
+                        <p>{{ result.message }}</p>
+                    </div>
+                    {% endif %}
+
+                    <div class="mt-4">
+                        <h5>Authentication Information:</h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    {% if result.student_name %}
+                                    <tr>
+                                        <th style="width: 30%">Student Name</th>
+                                        <td>{{ result.student_name }}</td>
+                                    </tr>
+                                    {% endif %}
+                                    {% if result.student_id %}
+                                    <tr>
+                                        <th style="width: 30%">Student ID</th>
+                                        <td>{{ result.student_id }}</td>
+                                    </tr>
+                                    {% endif %}
+                                    {% if result.photo_uploaded %}
+                                    <tr>
+                                        <th style="width: 30%">Photo</th>
+                                        <td>Uploaded ({{ result.photo_name }})</td>
+                                    </tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                        <a href="{{ url_for('consumer.student_auth', service_id=service.service_id) }}"
+                            class="btn btn-primary">
+                            <i class="fas fa-redo me-1"></i> Retry Authentication
+                        </a>
+                        <a href="{{ url_for('user.view_organization', org_id=provider_organization.organization_id) }}"
+                            class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Back to Organization
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

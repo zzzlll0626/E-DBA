@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Thesis Search Results - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Thesis Search Results</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('user.dashboard') }}">My Dashboard</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('user.view_organization', org_id=provider_organization.organization_id) }}">{{
+                            provider_organization.short_name }}</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('consumer.thesis_search', service_id=service.service_id) }}">Thesis
+                            Search</a>
+                    </li>
+                    <li class="breadcrumb-item active">Search Results</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Search Results</h5>
+                    {% if download_price > 0 %}
+                    <span class="badge bg-info">Thesis Download Price: {{ download_price }} CNY/paper</span>
+                    {% else %}
+                    <span class="badge bg-success">Free Download</span>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    {% if results %}
+                    <div class="list-group">
+                        {% for result in results %}
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between mb-2">
+                                <h5 class="mb-1">{{ result.title }}</h5>
+                            </div>
+                            <p class="mb-2">{{ result.abstract }}</p>
+
+                            {% for key, value in result.items() %}
+                            {% if key not in ['title', 'abstract'] %}
+                            <p class="mb-2"><strong>{{ key|capitalize }}:</strong> {{ value }}</p>
+                            {% endif %}
+                            {% endfor %}
+
+                            <div class="btn-group">
+                                <a href="{{ url_for('consumer.thesis_view', service_id=service.service_id, title=result.title) }}"
+                                    class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-eye me-1"></i> View Thesis
+                                </a>
+
+                                {% if has_download_access %}
+                                <form action="{{ url_for('consumer.thesis_download', service_id=service.service_id) }}"
+                                    method="POST" class="d-inline">
+                                    <input type="hidden" name="title" value="{{ result.title }}">
+                                    <button type="submit" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download me-1"></i> Download Thesis
+                                    </button>
+                                </form>
+                                {% else %}
+                                <button type="button" class="btn btn-sm btn-outline-secondary disabled"
+                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="You do not have download permission, please contact the service provider for access">
+                                    <i class="fas fa-download me-1"></i> Download Thesis
+                                </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> No related theses found.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <a href="{{ url_for('consumer.thesis_search', service_id=service.service_id) }}"
+            class="btn btn-outline-primary">
+            <i class="fas fa-search me-1"></i> Back to Search
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    });
+</script>
+{% endblock %}

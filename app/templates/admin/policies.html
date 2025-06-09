@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+
+{% block title %}Policy Management - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Policy Management</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {% if session.get('user_role') == 'E-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.eadmin_dashboard') }}">E-Admin Dashboard</a>
+                    </li>
+                    {% elif session.get('user_role') == 'Senior-E-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.senior_eadmin_dashboard') }}">Senior E-Admin
+                            Dashboard</a></li>
+                    {% endif %}
+                    <li class="breadcrumb-item active">Policy Management</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+                    <h5 class="mb-0">Platform Policies</h5>
+                    <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#addPolicyModal">
+                        <i class="fas fa-plus me-1"></i> Add Policy
+                    </button>
+                </div>
+                <div class="card-body">
+                    {% if policies %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Created</th>
+                                    <th>Last Updated</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for policy in policies %}
+                                <tr>
+                                    <td>{{ policy.title }}</td>
+                                    <td>{{ policy.created_at.strftime('%Y-%m-%d') }}</td>
+                                    <td>{{ policy.updated_at.strftime('%Y-%m-%d') if policy.updated_at else 'No update'
+                                        }}</td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            {% if policy.file_path %}
+                                            <a href="{{ url_for('admin.view_policy_pdf', policy_id=policy.policy_id) }}"
+                                                class="btn btn-outline-info" target="_blank">
+                                                <i class="fas fa-eye"></i> View
+                                            </a>
+                                            <a href="{{ url_for('admin.download_policy', policy_id=policy.policy_id) }}"
+                                                class="btn btn-outline-primary" target="_blank">
+                                                <i class="fas fa-download"></i> Download
+                                            </a>
+                                            {% endif %}
+                                            <button type="button" class="btn btn-outline-secondary edit-policy-btn"
+                                                data-id="{{ policy.policy_id }}" data-title="{{ policy.title }}"
+                                                data-description="{{ policy.description }}">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger delete-policy-btn"
+                                                data-id="{{ policy.policy_id }}" data-title="{{ policy.title }}">
+                                                <i class="fas fa-trash-alt"></i> Delete
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> No policies found. Please click "Add Policy" to create
+                        one.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Policy Guidelines</h5>
+                </div>
+                <div class="card-body">
+                    <p>Platform policies are essential rules governing the operation of the E-DBA platform. All
+                        organizations and users must comply. As an administrator, you can create, update, and manage
+                        these policies.</p>
+                    <p>Suggested policy types include:</p>
+                    <ul>
+                        <li>Copyright Policy: Governs content ownership and usage restrictions</li>
+                        <li>Privacy & Data Collection Policy: Explains how user data is collected, used, and protected
+                        </li>
+                        <li>Data Sharing Policy: Defines data sharing principles among organizations</li>
+                        <li>Service Usage Policy: Outlines rules and limitations of service use</li>
+                        <li>Fee Policy: Specifies the structure and methods of membership and service fees</li>
+                    </ul>
+                    <p>All policies must be uploaded in PDF format for users to download and review.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addPolicyModal" tabindex="-1" aria-labelledby="addPolicyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPolicyModalLabel">Add Policy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('admin.manage_policies') }}" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="add">
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"
+                            placeholder="Enter a brief summary of the policy shown to users"></textarea>
+                        <div class="form-text">A short description helps users quickly understand the policy.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="policy_file" class="form-label">Policy File (PDF) <span
+                                class="text-danger">*</span></label>
+                        <input type="file" class="form-control" id="policy_file" name="policy_file" accept=".pdf"
+                            required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editPolicyModal" tabindex="-1" aria-labelledby="editPolicyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPolicyModalLabel">Edit Policy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('admin.manage_policies') }}" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="update">
+                    <input type="hidden" id="edit_policy_id" name="policy_id">
+
+                    <div class="mb-3">
+                        <label for="edit_title" class="form-label">Title <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="edit_title" name="title" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit_description" class="form-label">Description</label>
+                        <textarea class="form-control" id="edit_description" name="description" rows="3"
+                            placeholder="Enter a brief summary of the policy shown to users"></textarea>
+                        <div class="form-text">A short description helps users quickly understand the policy.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit_policy_file" class="form-label">Update File (PDF)</label>
+                        <input type="file" class="form-control" id="edit_policy_file" name="policy_file" accept=".pdf">
+                        <div class="form-text">Leave blank to keep the original file.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deletePolicyModal" tabindex="-1" aria-labelledby="deletePolicyModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePolicyModalLabel">Delete Policy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url_for('admin.manage_policies') }}" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="action" value="delete">
+                    <input type="hidden" id="delete_policy_id" name="policy_id">
+                    <p>Are you sure you want to delete the policy <strong id="delete_policy_title"></strong>?</p>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> This action cannot be undone.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const editButtons = document.querySelectorAll('.edit-policy-btn');
+        editButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+                const title = this.getAttribute('data-title');
+                const description = this.getAttribute('data-description') || '';
+
+                document.getElementById('edit_policy_id').value = id;
+                document.getElementById('edit_title').value = title;
+                document.getElementById('edit_description').value = description;
+
+                const editModal = new bootstrap.Modal(document.getElementById('editPolicyModal'));
+                editModal.show();
+            });
+        });
+
+        const deleteButtons = document.querySelectorAll('.delete-policy-btn');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+                const title = this.getAttribute('data-title');
+
+                document.getElementById('delete_policy_id').value = id;
+                document.getElementById('delete_policy_title').textContent = title;
+
+                const deleteModal = new bootstrap.Modal(document.getElementById('deletePolicyModal'));
+                deleteModal.show();
+            });
+        });
+    });
+</script>
+{% endblock %}

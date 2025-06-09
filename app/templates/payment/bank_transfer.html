@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}Bank Transfer Payment - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Bank Transfer Payment</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('user.dashboard') }}">Homepage</a></li>
+                    <li class="breadcrumb-item active">Payment</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Payment Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong>Payment amount:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            {{ payment.amount }} RMB
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong>Payment Type:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            {% if payment.payment_type == 'membership_fee' %}
+                            Membership Fees
+                            {% elif payment.payment_type == 'membership_fee_batch' %}
+                            Bulk Membership Fees
+                            {% elif payment.payment_type == 'service_fee' %}
+                            Service Fee
+                            {% elif payment.payment_type == 'thesis_download' %}
+                            Download the paper
+                            {% elif payment.payment_type == 'student_identity' %}
+                            Authentication
+                            {% elif payment.payment_type == 'student_identity_batch' %}
+                            Bulk Authentication
+                            {% elif payment.payment_type == 'student_record' %}
+                            Student Records Search
+                            {% elif payment.payment_type == 'student_record_batch' %}
+                            Bulk student record query
+                            {% else %}
+                            {{ payment.payment_type }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong>Receiving Organization:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            {{ receiver_organization.full_name }} ({{ receiver_organization.short_name }})
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <strong>Receiving account:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            {{ receiver_account.bank_name }}<br>
+                            Account Name: {{ receiver_account.account_name }}<br>
+                            Account Number: {{ receiver_account.account_no }}
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Please pay the above amount by bank transfer. You can use a bank account that your organization has configured.
+                    </div>
+
+                    <form action="{{ url_for('payment.bank_transfer', payment_id=payment.payment_id, redirect_url=redirect_url) }}"
+                          method="POST" id="bankTransferForm">
+
+                        {% if sender_account %}
+                        <!-- 使用组织账户的部分 - 简化版 -->
+                        <div class="card mb-4 border-success">
+                            <div class="card-body">
+                                <h5 class="card-title text-success">
+                                    <i class="fas fa-university me-2"></i>Use Organization's Bank Account
+                                </h5>
+                                <p class="card-text">
+                                    <strong>Bank:</strong> {{ sender_account.bank_name }}<br>
+                                    <strong>Account Name:</strong> {{ sender_account.account_name }}<br>
+                                    <strong>Account Number:</strong> {{ sender_account.account_no }}
+                                </p>
+                                <div class="form-check mb-3">
+                                    <input type="checkbox" class="form-check-input" id="use_org_account" name="use_org_account" value="1" checked>
+                                    <label class="form-check-label" for="use_org_account">
+                                        Use this bank account for payment
+                                    </label>
+                                </div>
+                                <div class="text-muted small">
+                                    <i class="fas fa-info-circle me-1"></i> The password will be automatically used for verification.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 添加隐藏字段，确保提交表单时包含所需数据 -->
+                        <input type="hidden" name="from_bank" value="{{ sender_account.bank_name }}">
+                        <input type="hidden" name="from_name" value="{{ sender_account.account_name }}">
+                        <input type="hidden" name="from_account" value="{{ sender_account.account_no }}">
+                        {% else %}
+                        <!-- 如果没有组织账户，显示一个提示 -->
+                        <div class="alert alert-warning mb-4">
+                            <i class="fas fa-exclamation-triangle me-2"></i> Your organization has not set up a bank account. Please contact your organization administrator.
+                        </div>
+                        {% endif %}
+
+                        <!-- 收款方信息（隐藏字段） -->
+                        {% for field_name, field_type in transfer_input_fields.items() %}
+                        {% if field_name.startswith('to_') %}
+                        <input type="hidden" name="{{ field_name }}" value="{% if field_name == 'to_bank' %}{{ receiver_account.bank_name }}{% elif field_name == 'to_name' %}{{ receiver_account.account_name }}{% elif field_name == 'to_account' %}{{ receiver_account.account_no }}{% endif %}">
+                        {% endif %}
+                        {% endfor %}
+
+                        <!-- 金额（隐藏字段） -->
+                        {% if 'amount' in transfer_input_fields %}
+                        <input type="hidden" name="amount" value="{{ payment.amount }}">
+                        {% endif %}
+
+                        <!-- 操作类型（隐藏字段） -->
+                        <input type="hidden" name="action" value="check_balance">
+
+                        <!-- 确认付款 -->
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="confirm_payment" name="confirm_payment" required>
+                            <label class="form-check-label" for="confirm_payment">
+                                I confirm to check the account balance and prepare to pay {{ payment.amount }} RMB
+                            </label>
+                        </div>
+
+                        <!-- 按钮区域 -->
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{ redirect_url or url_for('user.dashboard') }}" class="btn btn-secondary me-md-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary" id="submitBtn">Check your balance</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Page loaded");
+
+        const useOrgAccount = document.getElementById('use_org_account');
+        const submitBtn = document.getElementById('submitBtn');
+        const bankTransferForm = document.getElementById('bankTransferForm');
+
+        // 不再需要处理密码字段的显示/隐藏
+
+        if (bankTransferForm) {
+            bankTransferForm.addEventListener('submit', function(e) {
+                console.log("Form submission event triggers");
+
+                // 显示加载状态
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+
+                // 验证确认付款复选框
+                if (!document.getElementById('confirm_payment').checked) {
+                    e.preventDefault();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Check your balance';
+                    alert("Please confirm the payment");
+                    return false;
+                }
+
+                // 验证是否选择了组织账户
+                if (!useOrgAccount.checked) {
+                    e.preventDefault();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Check your balance';
+                    alert("You must use your organization's bank account for this payment");
+                    return false;
+                }
+
+                console.log("The form is successfully verified, continue to submit");
+                return true;
+            });
+        }
+    });
+</script>
+{% endblock %}

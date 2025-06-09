@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% from "macros.html" import status_badge %}
+
+{% block title %}Review Organization Application - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Review Organization Application</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {% if session.get('user_role') == 'E-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.eadmin_dashboard') }}">E-Admin Dashboard</a>
+                    </li>
+                    {% elif session.get('user_role') == 'Senior-E-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.senior_eadmin_dashboard') }}">Senior E-Admin
+                            Dashboard</a></li>
+                    {% endif %}
+                    <li class="breadcrumb-item active">Review Application</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Organization Application Details</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Organization Name:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ application.full_name }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Short Name:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ application.short_name }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Registration Email:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ application.registration_email }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Submission Time:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ application.created_at.strftime('%Y-%m-%d %H:%M:%S') }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Status:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ status_badge(application.status) }}
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <strong>Proof Document:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {% if application.proof_document %}
+                            <a href="{{ url_for('admin.view_proof_document', organization_id=application.organization_id) }}"
+                                target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-file-pdf me-1"></i> View Document
+                            </a>
+                            {% else %}
+                            <span class="text-muted">No document uploaded</span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% if session.get('user_role') == 'E-Admin' and not application.approved_by_e_admin %}
+                    <form action="{{ url_for('admin.review_application', app_id=application.organization_id) }}"
+                        method="POST">
+                        <div class="mb-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="approve" value="approve"
+                                    checked>
+                                <label class="form-check-label" for="approve">Approve</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="reject" value="reject">
+                                <label class="form-check-label" for="reject">Reject</label>
+                            </div>
+                        </div>
+
+                        <div id="rejectReason" class="mb-3 d-none">
+                            <label for="reject_reason" class="form-label">Reason for Rejection:</label>
+                            <textarea class="form-control" id="reject_reason" name="reject_reason" rows="3"></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            {% if session.get('user_role') == 'E-Admin' %}
+                            <a href="{{ url_for('admin.eadmin_dashboard') }}"
+                                class="btn btn-secondary me-md-2">Cancel</a>
+                            {% else %}
+                            <a href="{{ url_for('admin.senior_eadmin_dashboard') }}"
+                                class="btn btn-secondary me-md-2">Cancel</a>
+                            {% endif %}
+                            <button type="submit" class="btn btn-primary">Submit Review Result</button>
+                        </div>
+                    </form>
+                    {% elif session.get('user_role') == 'Senior-E-Admin' and application.approved_by_e_admin and not
+                    application.approved_by_senior_e_admin %}
+                    <form action="{{ url_for('admin.review_application', app_id=application.organization_id) }}"
+                        method="POST">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i> This application has been approved by E-Admin and is
+                            waiting for your final review.
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="approve" value="approve"
+                                    checked>
+                                <label class="form-check-label" for="approve">Approve</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="reject" value="reject">
+                                <label class="form-check-label" for="reject">Reject</label>
+                            </div>
+                        </div>
+
+                        <div id="rejectReason" class="mb-3 d-none">
+                            <label for="reject_reason" class="form-label">Reason for Rejection:</label>
+                            <textarea class="form-control" id="reject_reason" name="reject_reason" rows="3"></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{ url_for('admin.senior_eadmin_dashboard') }}"
+                                class="btn btn-secondary me-md-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Submit Final Review Result</button>
+                        </div>
+                    </form>
+                    {% else %}
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> You are not authorized to review this
+                        application.
+                        {% if application.status == 'pending' and application.approved_by_e_admin %}
+                        This application has been approved by E-Admin and is waiting for final review by Senior E-Admin.
+                        {% elif application.status == 'approved' %}
+                        This application has been approved.
+                        {% elif application.status == 'rejected' %}
+                        This application has been rejected.
+                        {% endif %}
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        {% if session.get('user_role') == 'E-Admin' %}
+                        <a href="{{ url_for('admin.eadmin_dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
+                        {% else %}
+                        <a href="{{ url_for('admin.senior_eadmin_dashboard') }}" class="btn btn-primary">Back to
+                            Dashboard</a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const approveRadio = document.getElementById('approve');
+        const rejectRadio = document.getElementById('reject');
+        const rejectReasonDiv = document.getElementById('rejectReason');
+        const rejectReasonTextarea = document.getElementById('reject_reason');
+
+        if (approveRadio && rejectRadio) {
+            approveRadio.addEventListener('change', function () {
+                if (this.checked) {
+                    rejectReasonDiv.classList.add('d-none');
+                    rejectReasonTextarea.removeAttribute('required');
+                }
+            });
+
+            rejectRadio.addEventListener('change', function () {
+                if (this.checked) {
+                    rejectReasonDiv.classList.remove('d-none');
+                    rejectReasonTextarea.setAttribute('required', '');
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

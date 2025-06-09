@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block title %}Organization activity log - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Organization activity log</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('organization.workspace') }}">Workspace</a></li>
+                    <li class="breadcrumb-item active">Activity log</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Filters</h5>
+                </div>
+                <div class="card-body">
+                    <form id="filterForm" action="{{ url_for('organization.view_logs') }}" method="GET">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="activity" class="form-label">Activity Type</label>
+                                <select class="form-select" id="activity" name="activity">
+                                    <option value="">All Activities</option>
+                                    <option value="login" {% if activity == 'login' %}selected{% endif %}>Login/Logout</option>
+                                    <option value="course_search" {% if activity == 'course_search' %}selected{% endif %}>Course Search</option>
+                                    <option value="student_auth" {% if activity == 'student_auth' %}selected{% endif %}>Student Identity Verification</option>
+                                    <option value="thesis_search" {% if activity == 'thesis_search' %}selected{% endif %}>Paper Search</option>
+                                    <option value="thesis_download" {% if activity == 'thesis_download' %}selected{% endif %}>Download the paper</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="username" class="form-label">User</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="User mailbox" value="{{ username if username else '' }}">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="date" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="date" name="date" value="{{ date if date else '' }}">
+                            </div>
+
+                            <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" id="resetBtn" class="btn btn-outline-secondary">Reset</button>
+                                <button type="submit" class="btn btn-primary">filter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Logging record</h5>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary btn-sm" id="exportBtn">
+                            <i class="fas fa-file-export me-1"></i> Export to Excel
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {% if logs %}
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="logsTable">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Login time</th>
+                                <th>Logout time</th>
+                                <th>Access Services</th>
+                                <th>Provider/Accessor</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for log in logs %}
+                            <tr>
+                                <td>{{ log.log_id }}</td>
+                                <td>{{ log.user_email }}</td>
+                                <td>{{ log.login_time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                <td>{{ log.logout_time.strftime('%Y-%m-%d %H:%M:%S') if log.logout_time else '-' }}</td>
+                                <td>{{ log.service_accessed or '-' }}</td>
+                                <td>
+                                    {% if log.provider_organization_name %}
+                                    {{ log.provider_organization_name }}
+                                    {% elif log.provider_organization_id == organization_id %}
+                                    <span class="badge bg-primary">The organization provides</span>
+                                    {% else %}
+                                    -
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    {% if total_pages > 1 %}
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item {{ 'disabled' if page == 1 else '' }}">
+                                <a class="page-link" href="{{ url_for('organization.view_logs', page=page-1, activity=activity, username=username, date=date) if page > 1 else '#' }}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+
+                            {% for p in range(1, total_pages + 1) %}
+                            <li class="page-item {{ 'active' if p == page else '' }}">
+                                <a class="page-link" href="{{ url_for('organization.view_logs', page=p, activity=activity, username=username, date=date) }}">{{ p }}</a>
+                            </li>
+                            {% endfor %}
+
+                            <li class="page-item {{ 'disabled' if page == total_pages else '' }}">
+                                <a class="page-link" href="{{ url_for('organization.view_logs', page=page+1, activity=activity, username=username, date=date) if page < total_pages else '#' }}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    {% endif %}
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> There are no log records matching the criteria.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<form id="exportForm" action="{{ url_for('helper.export_logs') }}" method="GET" class="d-none">
+    <input type="hidden" name="type" value="activity">
+    <input type="hidden" name="activity" value="{{ activity if activity else '' }}">
+    <input type="hidden" name="username" value="{{ username if username else '' }}">
+    <input type="hidden" name="date" value="{{ date if date else '' }}">
+    <input type="hidden" name="organization_id" value="{{ organization_id }}">
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const resetBtn = document.getElementById('resetBtn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function() {
+                const form = document.getElementById('filterForm');
+
+                form.querySelectorAll('input, select').forEach(element => {
+                    if (element.type !== 'submit' && element.type !== 'button') {
+                        if (element.tagName === 'SELECT') {
+                            element.selectedIndex = 0;
+                        } else {
+                            element.value = '';
+                        }
+                    }
+                });
+
+                form.submit();
+            });
+        }
+
+
+        const exportBtn = document.getElementById('exportBtn');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', function() {
+                document.getElementById('exportForm').submit();
+            });
+        }
+    });
+</script>
+{% endblock %}

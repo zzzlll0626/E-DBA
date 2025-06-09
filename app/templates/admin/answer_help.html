@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}Answer Help Request - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Answer Help Request</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.tadmin_dashboard') }}">T-Admin Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active">Answer Help Request</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Help Request Details</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Title:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ request.title }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>User:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ request.user_email }}
+                            {% if request.organization_name %}
+                            ({{ request.organization_name }})
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Role:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ request.user_role }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <strong>Submitted At:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            {{ request.submit_time.strftime('%Y-%m-%d %H:%M:%S') }}
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <strong>Description:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="p-3 bg-light rounded">
+                                {{ request.description|nl2br }}
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if request.is_answered %}
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h6 class="mb-0">Answered</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-3">
+                                    <strong>Answered At:</strong>
+                                </div>
+                                <div class="col-md-9">
+                                    {{ request.response_time.strftime('%Y-%m-%d %H:%M:%S') }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <strong>Response:</strong>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="p-3 bg-light rounded">
+                                        {{ request.response|nl2br }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{{ url_for('admin.tadmin_dashboard') }}" class="btn btn-primary">
+                            <i class="fas fa-arrow-left me-2"></i> Back to Dashboard
+                        </a>
+                    </div>
+                    {% else %}
+                    <form action="{{ url_for('admin.answer_help_request', request_id=request.request_id) }}"
+                        method="POST" id="answerForm">
+                        <div class="mb-4">
+                            <label for="answer" class="form-label">Answer: <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="answer" name="answer" rows="6" required
+                                placeholder="Enter your answer..."></textarea>
+                            <div class="form-text">Provide a clear and detailed response to help the user resolve the
+                                issue.</div>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="sendEmail" name="send_email" checked>
+                            <label class="form-check-label" for="sendEmail">
+                                Send email notification to user
+                            </label>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{ url_for('admin.tadmin_dashboard') }}"
+                                class="btn btn-secondary me-md-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Submit Answer</button>
+                        </div>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const answerForm = document.getElementById('answerForm');
+        if (answerForm) {
+            answerForm.addEventListener('submit', function (event) {
+                const answerText = document.getElementById('answer').value.trim();
+                if (!answerText) {
+                    event.preventDefault();
+                    alert('Please provide an answer');
+                    document.getElementById('answer').focus();
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

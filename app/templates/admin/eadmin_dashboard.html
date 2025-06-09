@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% from "macros.html" import status_badge %}
+
+{% block title %}E-Admin Dashboard - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">E-Admin Dashboard</h2>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">Pending Organization Applications</h5>
+                </div>
+                <div class="card-body">
+                    {% if applications %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Organization Name</th>
+                                    <th>Abbreviation</th>
+                                    <th>Registration Email</th>
+                                    <th>Submitted At</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for app in applications %}
+                                <tr>
+                                    <td>{{ app.full_name }}</td>
+                                    <td>{{ app.short_name }}</td>
+                                    <td>{{ app.registration_email }}</td>
+                                    <td>{{ app.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                                    <td>{{ status_badge(app.status) }}</td>
+                                    <td>
+                                        <a href="{{ url_for('admin.review_application', app_id=app.organization_id) }}"
+                                            class="btn btn-sm btn-primary">
+                                            <i class="fas fa-search"></i> Review
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> No pending organization applications.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-file-alt fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Policy Management</h5>
+                    <p class="card-text">Manage data sharing policies</p>
+                    <a href="{{ url_for('admin.manage_policies') }}" class="btn btn-primary">Manage</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-clipboard-list fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Log Viewer</h5>
+                    <p class="card-text">View system logs</p>
+                    <a href="{{ url_for('admin.view_logs') }}" class="btn btn-primary">View Logs</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-money-bill-wave fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Membership Fee Settings</h5>
+                    <p class="card-text">Manage membership fee standards</p>
+                    <a href="{{ url_for('admin.manage_membership_fees') }}" class="btn btn-primary">Set Fees</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-university fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Bank Account Settings</h5>
+                    <p class="card-text">Configure E-DBA system bank account</p>
+                    <a href="{{ url_for('admin.setup_bank_account') }}" class="btn btn-primary">Setup Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

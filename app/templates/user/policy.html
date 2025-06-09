@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}data sharing policy of platform - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">data sharing policy of platform</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">first page</a></li>
+                    <li class="breadcrumb-item active">platform policy</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    
+    {% if get_flashed_messages() %}
+    <div class="row mb-4">
+        <div class="col-md-12">
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">about platform policy</h5>
+                    <p>The policies of the E-DBA platform are important rules governing the platform's operation. All users are required to understand and comply with these policies</p>
+                    <p>The following are all the policy documents published on our platform. You can view and download these documents</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row mb-4">
+        {% if policies %}
+            {% for policy in policies %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header d-flex justify-content-between align-items-center bg-light">
+                        <h5 class="mb-0">{{ policy.title }}</h5>
+                        {% if policy.file_path %}
+                        <a href="{{ url_for('user.view_policy_pdf', policy_id=policy.policy_id) }}"
+                           class="btn btn-info btn-sm" target="_blank">
+                            <i class="fas fa-eye me-1"></i> check
+                        </a>
+                        <a href="{{ url_for('admin.download_policy', policy_id=policy.policy_id) }}" class="btn btn-primary btn-sm">
+                            <i class="fas fa-download me-1"></i> download
+                        </a>
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        {% if policy.description %}
+                        <p class="mb-3">{{ policy.description }}</p>
+                        {% else %}
+                        <p class="text-muted mb-3"><em>no description</em></p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between small text-muted mb-3">
+                            <span>publish time: {{ policy.created_at.strftime('%Y-%m-%d') }}</span>
+                            {% if policy.updated_at %}
+                            <span>Last Updated: {{ policy.updated_at.strftime('%Y-%m-%d') }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i> No policy documents have been published yet
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

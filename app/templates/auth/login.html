@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}Login - E-DBA{% endblock %}
+
+{% block content %}
+{% if session.get('user_id') %}
+<script>
+    window.onload = function () {
+        window.location.href = "{{ url_for('auth.logout') }}";
+    }
+</script>
+{% endif %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Login</h4>
+                </div>
+                <div class="card-body">
+                    <form id="loginForm" method="POST" action="{{ url_for('auth.login') }}">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <div id="normalLogin" class="mb-3">
+                            <label for="code" class="form-label">Verification Code</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="code" name="code">
+                                <button type="button" id="sendVerification" class="btn btn-outline-primary">Send
+                                    Code</button>
+                            </div>
+                        </div>
+
+                        <div id="tadminLogin" class="mb-3 d-none">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <p class="mb-0">No account? <a href="{{ url_for('auth.register') }}">Register Organization</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const emailInput = document.getElementById('email');
+        const normalLogin = document.getElementById('normalLogin');
+        const tadminLogin = document.getElementById('tadminLogin');
+        const sendVerificationBtn = document.getElementById('sendVerification');
+
+        tadminLogin.classList.add('d-none');
+        normalLogin.classList.remove('d-none');
+
+        sendVerificationBtn.addEventListener('click', function () {
+            const email = emailInput.value;
+            if (!email) {
+                alert('Please enter your email');
+                return;
+            }
+
+            let seconds = 60;
+            this.disabled = true;
+            this.innerText = `Please wait (${seconds}s)`;
+
+            const countDown = setInterval(() => {
+                seconds--;
+                this.innerText = `Please wait (${seconds}s)`;
+
+                if (seconds <= 0) {
+                    clearInterval(countDown);
+                    this.disabled = false;
+                    this.innerText = 'Send Code';
+                }
+            }, 1000);
+
+            fetch("{{ url_for('auth.send_verification') }}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'email': email
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Verification code has been sent to your email');
+                    } else {
+                        alert('Failed to send verification code: ' + data.message);
+                        clearInterval(countDown);
+                        sendVerificationBtn.disabled = false;
+                        sendVerificationBtn.innerText = 'Send Code';
+                    }
+                })
+                .catch(error => {
+                    alert('Error occurred: ' + error);
+                    clearInterval(countDown);
+                    sendVerificationBtn.disabled = false;
+                    sendVerificationBtn.innerText = 'Send Code';
+                });
+        });
+    });
+</script>
+{% endblock %}

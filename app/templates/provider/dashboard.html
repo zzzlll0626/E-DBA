@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Provider Dashboard - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Provider Dashboard</h2>
+            <p class="lead">Welcome, {{ user.email }} | Organization: {{ organization.short_name }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Course Management</h5>
+                </div>
+                <div class="card-body">
+                    <p>Manage course information provided by your organization. Add, edit, or delete courses.</p>
+                    <a href="{{ url_for('provider.manage_courses') }}" class="btn btn-primary">
+                        <i class="fas fa-book me-2"></i>Manage Courses
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">API Configuration</h5>
+                </div>
+                <div class="card-body">
+                    <p>Configure your API interfaces to provide student authentication or thesis sharing services.</p>
+                    <a href="{{ url_for('provider.services_to_configure') }}" class="btn btn-primary">
+                        <i class="fas fa-cogs me-2"></i>Configure Service APIs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 mb-5">
+        <div class="col-md-12">
+            <a href="{{ url_for('user.dashboard') }}" class="btn btn-outline-secondary">
+                <i class="fas fa-home me-1"></i> Back to Home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

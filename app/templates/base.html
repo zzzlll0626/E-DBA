@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}E-DBA Education Data Space{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">E-DBA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+                        </li>
+                        {% if session.get('user_id') %}
+                        {% if session.get('user_role') == 'T-Admin' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('admin.tadmin_dashboard') }}">Admin Panel</a>
+                        </li>
+                        {% elif session.get('user_role') == 'E-Admin' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('admin.eadmin_dashboard') }}">Admin Panel</a>
+                        </li>
+                        {% elif session.get('user_role') == 'Senior-E-Admin' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('admin.senior_eadmin_dashboard') }}">Admin Panel</a>
+                        </li>
+                        {% elif session.get('user_role') == 'O-Convener' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('organization.workspace') }}">Workspace</a>
+                        </li>
+                        {% elif session.get('user_access_level', 0) >= 3 %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('provider.dashboard') }}">Provider Panel</a>
+                        </li>
+                        {% elif session.get('user_id') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('user.dashboard') }}">My Dashboard</a>
+                        </li>
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('user.help_center') }}">Help Center</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('user.view_policies') }}">Policies</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if session.get('user_id') %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ session.get('user_email', 'User') }}
+                                {% if get_unread_messages_count() > 0 %}
+                                <span class="badge bg-danger">{{ get_unread_messages_count }}</span>
+                                {% endif %}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}">Logout</a></li>
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4 mb-5 py-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category if category != 'message' else 'info' }} alert-dismissible fade show"
+            role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="py-3 mt-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>E-DBA Education Data Space</h5>
+                    <p>Providing a secure and convenient data sharing platform for educational institutions.</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center">2025 E-DBA Education Data Space. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+{% extends "base.html" %}
+
+{% block title %}Membership Fee Settings - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Membership Fee Settings</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {% if session.get('user_role') == 'E-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.eadmin_dashboard') }}">E-Admin Dashboard</a>
+                    </li>
+                    {% elif session.get('user_role') == 'Senior-E-Admin' %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('admin.senior_eadmin_dashboard') }}">Senior E-Admin
+                            Dashboard</a></li>
+                    {% endif %}
+                    <li class="breadcrumb-item active">Membership Fee Settings</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Membership Fee Standards</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('admin.manage_membership_fees') }}" method="POST">
+                        <div class="card mb-4">
+                            <div class="card-header bg-light">
+                                <h6 class="mb-0">Public Data Access (Level 1)</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fee_type_1" class="form-label">Fee Type</label>
+                                        <select class="form-select" id="fee_type_1" name="fee_type_1">
+                                            <option value="flat_rate" {% if fees.get(1) and
+                                                fees.get(1).fee_type=='flat_rate' %}selected{% endif %}>Flat Rate
+                                            </option>
+                                            <option value="per_person" {% if not fees.get(1) or
+                                                fees.get(1).fee_type=='per_person' %}selected{% endif %}>Per Person
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fee_amount_1" class="form-label">Fee Amount (RMB)</label>
+                                        <input type="number" class="form-control" id="fee_amount_1" name="fee_amount_1"
+                                            min="0" step="0.01"
+                                            value="{{ fees.get(1).fee_amount if fees.get(1) else 10 }}">
+                                        <div class="form-text" id="fee_hint_1">
+                                            {% if fees.get(1) and fees.get(1).fee_type == 'flat_rate' %}
+                                            Flat rate: {{ fees.get(1).fee_amount }} RMB
+                                            {% else %}
+                                            {{ fees.get(1).fee_amount if fees.get(1) else 10 }} RMB per person
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle me-2"></i> Public data access allows access to general
+                                    course information. Supports flat rate or per person fee.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-light">
+                                <h6 class="mb-0">Private Data Consumption (Level 2)</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fee_type_2" class="form-label">Fee Type</label>
+                                        <select class="form-select" id="fee_type_2" name="fee_type_2">
+                                            <option value="per_person" selected>Per Person</option>
+                                            <option value="free" {% if fees.get(2) and fees.get(2).fee_type=='free'
+                                                %}selected{% endif %}>Free</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fee_amount_2" class="form-label">Fee Amount (RMB)</label>
+                                        <input type="number" class="form-control" id="fee_amount_2" name="fee_amount_2"
+                                            min="0" step="0.01"
+                                            value="{{ fees.get(2).fee_amount if fees.get(2) else 100 }}" {% if
+                                            fees.get(2) and fees.get(2).fee_type=='free' %}readonly{% endif %}>
+                                        <div class="form-text" id="fee_hint_2">
+                                            {% if fees.get(2) and fees.get(2).fee_type == 'free' %}
+                                            Free
+                                            {% else %}
+                                            {{ fees.get(2).fee_amount if fees.get(2) else 100 }} RMB per person
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle me-2"></i> Private data consumption allows usage of
+                                    paid services like student verification and paper downloads. Supports per person fee
+                                    or free.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-light">
+                                <h6 class="mb-0">Private Data Provision (Level 3)</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fee_type_3" class="form-label">Fee Type</label>
+                                        <select class="form-select" id="fee_type_3" name="fee_type_3">
+                                            <option value="per_person" {% if fees.get(3) and
+                                                fees.get(3).fee_type=='per_person' %}selected{% endif %}>Per Person
+                                            </option>
+                                            <option value="free" {% if not fees.get(3) or fees.get(3).fee_type=='free'
+                                                %}selected{% endif %}>Free</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fee_amount_3" class="form-label">Fee Amount (RMB)</label>
+                                        <input type="number" class="form-control" id="fee_amount_3" name="fee_amount_3"
+                                            min="0" step="0.01"
+                                            value="{{ fees.get(3).fee_amount if fees.get(3) else 0 }}" {% if not
+                                            fees.get(3) or fees.get(3).fee_type=='free' %}readonly{% endif %}>
+                                        <div class="form-text" id="fee_hint_3">
+                                            {% if fees.get(3) and fees.get(3).fee_type == 'per_person' %}
+                                            {{ fees.get(3).fee_amount }} RMB per person
+                                            {% else %}
+                                            Free (encouraging organizations to provide data services)
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle me-2"></i> Private data provision allows users to
+                                    configure and provide data services. Supports per person fee or free.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            {% if session.get('user_role') == 'E-Admin' %}
+                            <a href="{{ url_for('admin.eadmin_dashboard') }}"
+                                class="btn btn-secondary me-md-2">Cancel</a>
+                            {% elif session.get('user_role') == 'Senior-E-Admin' %}
+                            <a href="{{ url_for('admin.senior_eadmin_dashboard') }}"
+                                class="btn btn-secondary me-md-2">Cancel</a>
+                            {% endif %}
+                            <button type="submit" class="btn btn-primary">Save Settings</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const feeType1 = document.getElementById('fee_type_1');
+        const feeAmount1 = document.getElementById('fee_amount_1');
+        const feeHint1 = document.getElementById('fee_hint_1');
+
+        if (feeType1 && feeAmount1 && feeHint1) {
+            feeType1.addEventListener('change', function () {
+                if (this.value === 'flat_rate') {
+                    feeAmount1.value = '1000';
+                    feeHint1.textContent = `Flat rate: ${feeAmount1.value} RMB`;
+                } else if (this.value === 'per_person') {
+                    feeAmount1.value = '10';
+                    feeHint1.textContent = `${feeAmount1.value} RMB per person`;
+                }
+            });
+
+            feeAmount1.addEventListener('input', function () {
+                if (feeType1.value === 'flat_rate') {
+                    feeHint1.textContent = `Flat rate: ${this.value} RMB`;
+                } else if (feeType1.value === 'per_person') {
+                    feeHint1.textContent = `${this.value} RMB per person`;
+                }
+            });
+        }
+
+        const feeType2 = document.getElementById('fee_type_2');
+        const feeAmount2 = document.getElementById('fee_amount_2');
+        const feeHint2 = document.getElementById('fee_hint_2');
+
+        if (feeType2 && feeAmount2 && feeHint2) {
+            feeType2.addEventListener('change', function () {
+                if (this.value === 'per_person') {
+                    feeAmount2.value = '100';
+                    feeHint2.textContent = `${feeAmount2.value} RMB per person`;
+                    feeAmount2.removeAttribute('readonly');
+                } else if (this.value === 'free') {
+                    feeAmount2.value = '0';
+                    feeHint2.textContent = 'Free';
+                    feeAmount2.setAttribute('readonly', 'readonly');
+                }
+            });
+
+            feeAmount2.addEventListener('input', function () {
+                if (feeType2.value === 'per_person') {
+                    feeHint2.textContent = `${this.value} RMB per person`;
+                }
+            });
+        }
+
+        const feeType3 = document.getElementById('fee_type_3');
+        const feeAmount3 = document.getElementById('fee_amount_3');
+        const feeHint3 = document.getElementById('fee_hint_3');
+
+        if (feeType3 && feeAmount3 && feeHint3) {
+            feeType3.addEventListener('change', function () {
+                if (this.value === 'per_person') {
+                    feeAmount3.value = '50';
+                    feeHint3.textContent = `${feeAmount3.value} RMB per person`;
+                    feeAmount3.removeAttribute('readonly');
+                } else if (this.value === 'free') {
+                    feeAmount3.value = '0';
+                    feeHint3.textContent = 'Free (encouraging organizations to provide data services)';
+                    feeAmount3.setAttribute('readonly', 'readonly');
+                }
+            });
+
+            feeAmount3.addEventListener('input', function () {
+                if (feeType3.value === 'per_person') {
+                    feeHint3.textContent = `${this.value} RMB per person`;
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

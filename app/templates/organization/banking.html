@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+
+{% block title %}Bank Account Management - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Bank Account Management</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('organization.workspace') }}">Workspace</a></li>
+                    <li class="breadcrumb-item active">Bank Account Management</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Bank Account Setting</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('organization.banking') }}" method="POST" id="bankingForm">
+
+                        {% for field_name, field_type in auth_input_fields.items() %}
+                        <div class="mb-3">
+                            <label for="{{ field_name }}" class="form-label">{{ field_name|title }} {% if field_name !=
+                                'password' %}<span class="text-danger">*</span>{% endif %}</label>
+                            {% if field_name == 'password' %}
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="{{ field_name }}"
+                                       name="{{ field_name }}" required>
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            {% else %}
+
+                            <input type="text" class="form-control" id="{{ field_name }}" name="{{ field_name }}"
+                                   value="{% if account %}{{ account.bank_name if field_name == 'bank' else account.account_name if field_name == 'account_name' else account.account_no if field_name == 'account_number' else '' }}{% endif %}"
+                                   required>
+                            {% endif %}
+
+
+                            {% if field_name == 'bank' %}
+                            <div class="form-text">For example: Global Education Bank, FutureLearn Federal Bank, Bank of
+                                Utopia
+                            </div>
+                            {% elif field_name == 'account_name' %}
+                            <div class="form-text">For example: Campus Cash Cooperative, EdGrow Finance Co., BrightMind
+                                Capital
+                            </div>
+                            {% elif field_name == 'account_number' %}
+                            <div class="form-text">Your bank account number, for receiving and paying</div>
+                            {% elif field_name == 'password' %}
+                            <div class="form-text">Used to verify bank accounts and authorize transactions. Please use your actual PIN number for your bank account.</div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i> Bank account information is used to process payments and collections. Please ensure that the information provided is accurate.
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i class="fas fa-shield-alt me-2"></i> Security Tips: Your account password will be stored in encrypted form, and the system administrator cannot view the plain text of the password. Please keep your password safe.
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="confirm" required>
+                            <label class="form-check-label" for="confirm">I confirm that the bank account information provided is correct and valid.</label>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{ url_for('organization.workspace') }}" class="btn btn-secondary me-md-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+                {% if account %}
+                <div class="card-footer">
+                    <div class="alert alert-success mb-0">
+                        <i class="fas fa-check-circle me-2"></i> You have already set up your bank account. To modify it, simply update the form above and save.
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+
+            <div class="card mt-4 shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Bank Account Function</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-money-bill-wave me-2"></i> Collection Function
+                                    </h5>
+                                    <p class="card-text">Your bank account will be used to receive service usage fees. Every time another organization uses a paid service you provide, the fee will be automatically transferred to your account.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-credit-card me-2"></i> Payment Function
+                                    </h5>
+                                    <p class="card-text">Your bank account will be used to pay membership fees and use the services of other organizations. Make sure there is sufficient balance in the account to carry out the transaction.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h6>List of supported banks</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">Global Education Bank</li>
+                            <li class="list-group-item">FutureLearn Federal Bank</li>
+                            <li class="list-group-item">Bank of Utopia</li>
+                            <li class="list-group-item">Continental Scholars Bank</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card mt-4 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-0">View transaction history</h5>
+                            <p class="text-muted mb-0">View all banking transactions for your organization</p>
+                        </div>
+                        <a href="{{ url_for('organization.view_transactions') }}" class="btn btn-primary">
+                            <i class="fas fa-list me-2"></i> View transaction
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const bankingForm = document.getElementById('bankingForm');
+        const confirmCheckbox = document.getElementById('confirm');
+
+        bankingForm.addEventListener('submit', function(event) {
+            if (!confirmCheckbox.checked) {
+                event.preventDefault();
+                alert('Please confirm that the bank account information provided is correct and valid.');
+                confirmCheckbox.focus();
+            }
+        });
+
+        
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function() {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            
+            const icon = this.querySelector('i');
+            if (type === 'text') {
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        
+        const bankNameInput = document.getElementById('bank_name');
+        const suggestedBanks = [
+            'Global Education Bank',
+            'FutureLearn Federal Bank',
+            'Bank of Utopia',
+            'Continental Scholars Bank'
+        ];
+
+        if (bankNameInput) {
+            
+            const datalist = document.createElement('datalist');
+            datalist.id = 'bankSuggestions';
+
+            
+            suggestedBanks.forEach(bank => {
+                const option = document.createElement('option');
+                option.value = bank;
+                datalist.appendChild(option);
+            });
+
+            
+            document.body.appendChild(datalist);
+
+            
+            bankNameInput.setAttribute('list', 'bankSuggestions');
+        }
+    });
+</script>
+{% endblock %}

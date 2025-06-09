@@ -1,0 +1,1456 @@
+2025-05-03 01:27:19,964 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 01:27:19,964 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 01:27:19,966 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:27:20,844 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:27:20,846 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:27:25,593 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:27:25] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-03 01:27:25,652 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:27:25] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 01:27:25,660 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:27:25] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 01:27:25,963 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:27:25] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=2R4P4JOlsLg0Reuk3woH HTTP/1.1" 200 -
+2025-05-03 01:27:25,963 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:27:25] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 01:27:26,399 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:27:26] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:28:31,942 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 01:28:31,942 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 01:28:31,944 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:28:32,772 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:28:32,773 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:28:36,170 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:28:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-03 01:28:36,223 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:28:36] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 01:28:36,225 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:28:36] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 01:28:36,547 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:28:36] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=Uu3plySrvV0OcXyRh7Qi HTTP/1.1" 200 -
+2025-05-03 01:28:36,548 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:28:36] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:28:48,394 - werkzeug - INFO - 10.253.27.172 - - [03/May/2025 01:28:48] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-03 01:28:48,416 - werkzeug - INFO - 10.253.27.172 - - [03/May/2025 01:28:48] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 01:28:48,418 - werkzeug - INFO - 10.253.27.172 - - [03/May/2025 01:28:48] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 01:28:48,753 - werkzeug - INFO - 10.253.27.172 - - [03/May/2025 01:28:48] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 01:28:49,192 - werkzeug - INFO - 10.253.27.172 - - [03/May/2025 01:28:49] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:31:30,210 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 01:31:30,210 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 01:31:30,211 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:31:31,031 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:31:31,032 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:31:33,158 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:31:33] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-03 01:31:33,213 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:31:33] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 01:31:33,214 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:31:33] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 01:31:33,520 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:31:33] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=JsIo4BsZL1KztpwJZ05t HTTP/1.1" 200 -
+2025-05-03 01:31:33,522 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:31:33] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:32:41,601 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 01:32:41,601 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 01:32:41,602 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:32:42,428 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:32:42,430 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:33:23,695 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 01:33:23,695 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 01:33:23,696 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:33:24,498 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:33:24,500 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:33:50,110 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\config.py', reloading
+2025-05-03 01:33:50,197 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:33:51,193 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:33:51,194 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:35:00,272 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\config.py', reloading
+2025-05-03 01:35:00,382 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:35:01,271 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:35:01,273 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:36:35,764 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\database.py', reloading
+2025-05-03 01:36:35,844 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:36:36,738 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:36:36,739 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:36:44,171 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 01:36:44,171 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 01:36:44,172 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 01:36:45,015 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 01:36:45,016 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 01:36:48,179 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:48] "GET / HTTP/1.1" 200 -
+2025-05-03 01:36:48,258 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:48] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 01:36:48,260 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:48] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 01:36:48,521 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:48] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 01:36:52,694 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:52] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:36:55,867 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:55] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 01:36:55,907 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:55] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 01:36:55,921 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:55] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 01:36:56,151 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:36:59,283 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-05-03 01:36:59,283 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:36:59] "[31m[1mPOST /auth/send_verification HTTP/1.1[0m" 400 -
+2025-05-03 01:37:53,579 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:37:53] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 01:38:49,937 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-05-03 01:38:49,938 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:38:49] "[31m[1mPOST /auth/send_verification HTTP/1.1[0m" 400 -
+2025-05-03 01:38:53,210 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:38:53] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 01:38:53,247 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:38:53] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 01:38:53,249 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:38:53] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 01:38:53,877 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:38:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:03,072 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:03] "[35m[1mGET /policy HTTP/1.1[0m" 500 -
+2025-05-03 01:40:03,140 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:03] "GET /policy?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 01:40:03,141 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:03] "GET /policy?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 01:40:03,440 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:03] "GET /policy?__debugger__=yes&cmd=resource&f=console.png&s=NTBG5Ka42t2oUUsZPyHX HTTP/1.1" 200 -
+2025-05-03 01:40:03,441 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:03] "GET /policy?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 01:40:03,954 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:03] "[36mGET /policy?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:40:14,558 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:17,729 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:17] "[35m[1mGET /about HTTP/1.1[0m" 500 -
+2025-05-03 01:40:17,751 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:17] "GET /about?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 01:40:17,756 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:17] "GET /about?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 01:40:17,853 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:17] "GET /about?__debugger__=yes&cmd=resource&f=console.png&s=NTBG5Ka42t2oUUsZPyHX HTTP/1.1" 200 -
+2025-05-03 01:40:17,855 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:17] "GET /about?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 01:40:17,905 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:17] "[36mGET /about?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:40:25,701 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:27,200 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:27] "[35m[1mGET /policy HTTP/1.1[0m" 500 -
+2025-05-03 01:40:27,218 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:27] "[36mGET /policy?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 01:40:27,221 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:27] "[36mGET /policy?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 01:40:27,316 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:27] "[36mGET /policy?__debugger__=yes&cmd=resource&f=console.png&s=NTBG5Ka42t2oUUsZPyHX HTTP/1.1[0m" 304 -
+2025-05-03 01:40:27,317 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:27] "[36mGET /policy?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:40:28,671 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:39,145 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:39] "[35m[1mGET /course/search HTTP/1.1[0m" 500 -
+2025-05-03 01:40:39,164 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:39] "GET /course/search?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 01:40:39,168 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:39] "GET /course/search?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 01:40:39,412 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:39] "GET /course/search?__debugger__=yes&cmd=resource&f=console.png&s=NTBG5Ka42t2oUUsZPyHX HTTP/1.1" 200 -
+2025-05-03 01:40:39,413 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:39] "GET /course/search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 01:40:39,498 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:39] "[36mGET /course/search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:40:42,163 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:43,207 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:43] "[35m[1mGET /policy HTTP/1.1[0m" 500 -
+2025-05-03 01:40:43,223 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:43] "[36mGET /policy?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 01:40:43,225 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:43] "[36mGET /policy?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 01:40:43,301 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:43] "[36mGET /policy?__debugger__=yes&cmd=resource&f=console.png&s=NTBG5Ka42t2oUUsZPyHX HTTP/1.1[0m" 304 -
+2025-05-03 01:40:43,302 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:43] "[36mGET /policy?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:40:44,487 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:44] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:45,296 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:45] "[35m[1mGET /about HTTP/1.1[0m" 500 -
+2025-05-03 01:40:45,314 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:45] "[36mGET /about?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 01:40:45,316 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:45] "[36mGET /about?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 01:40:45,388 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:45] "[36mGET /about?__debugger__=yes&cmd=resource&f=console.png&s=NTBG5Ka42t2oUUsZPyHX HTTP/1.1[0m" 304 -
+2025-05-03 01:40:45,389 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:45] "[36mGET /about?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 01:40:48,895 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:50,050 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:50] "GET / HTTP/1.1" 200 -
+2025-05-03 01:40:50,074 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:50] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 01:40:50,089 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:50] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 01:40:50,091 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:50] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 01:40:50,196 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:55,279 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:55] "GET / HTTP/1.1" 200 -
+2025-05-03 01:40:55,320 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:55] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 01:40:55,323 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:55] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 01:40:55,323 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:55] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 01:40:55,411 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 01:40:56,878 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:56] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 01:40:56,912 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:56] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 01:40:56,916 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:56] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 01:40:57,008 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 01:40:57] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:00:51,755 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\database.py', reloading
+2025-05-03 02:00:51,986 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:00:53,188 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:00:53,190 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:00:59,359 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\database.py', reloading
+2025-05-03 02:00:59,455 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:01:00,343 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:01:00,345 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:01:06,501 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\database.py', reloading
+2025-05-03 02:01:06,604 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:01:07,467 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:01:07,469 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:03:26,291 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\config.py', reloading
+2025-05-03 02:03:26,379 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:03:27,338 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:03:27,340 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:03:49,848 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\config.py', reloading
+2025-05-03 02:03:49,937 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:03:50,777 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:03:50,779 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:03:57,946 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\config.py', reloading
+2025-05-03 02:03:58,050 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:03:58,942 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:03:58,943 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:07:12,737 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\auth_controller.py', reloading
+2025-05-03 02:07:12,871 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:07:13,830 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:07:13,832 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:08:53,905 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 02:08:53,905 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 02:08:53,906 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:08:54,726 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:08:54,727 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:08:57,899 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:08:57] "GET / HTTP/1.1" 200 -
+2025-05-03 02:08:57,935 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:08:57] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:08:57,936 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:08:57] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 02:08:58,247 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:08:58] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:08:58,658 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:08:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:09:01,609 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:01] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:09:01,662 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:01] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:09:01,665 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:01] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:09:01,745 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:09:06,302 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:06] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 02:09:06,352 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:06] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:09:06,355 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:06] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:09:06,458 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:06] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:09:09,418 - controllers.auth_controller - INFO - ³¢ÊÔ·¢ËÍÑéÖ¤Âëµ½ÓÊÏä: 1943565996@qq.com
+2025-05-03 02:09:09,775 - controllers.auth_controller - ERROR - ·¢ËÍÑéÖ¤ÓÊ¼þ³ö´í: Connection unexpectedly closed
+2025-05-03 02:09:09,779 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:09] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 02:09:45,976 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:45] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:09:46,036 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:46] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:09:46,038 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:46] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:09:46,174 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:09:46] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:10:03,093 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-05-03 02:10:03,095 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:10:03] "[31m[1mPOST /auth/send_verification HTTP/1.1[0m" 400 -
+2025-05-03 02:12:30,266 - werkzeug - INFO -  * Detected change in 'D:\\test\\config\\config.py', reloading
+2025-05-03 02:12:30,362 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:12:31,272 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:12:31,274 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:18:25,501 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 02:18:25,501 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 02:18:25,502 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:18:26,370 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:18:26,371 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:18:26,868 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:26] "GET / HTTP/1.1" 200 -
+2025-05-03 02:18:26,900 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:26] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:18:26,901 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:26] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 02:18:27,203 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:27] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:18:27,680 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:27] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:18:28,528 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:28] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:18:28,568 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:28] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:18:28,571 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:28] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:18:28,678 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:18:31,544 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:31] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 02:18:31,604 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:31] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:18:31,609 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:31] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:18:31,693 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:18:33,714 - controllers.auth_controller - INFO - ³¢ÊÔ·¢ËÍÑéÖ¤Âëµ½ÓÊÏä: 1943565996@qq.com
+2025-05-03 02:18:33,715 - controllers.auth_controller - ERROR - ·¢ËÍÑéÖ¤ÓÊ¼þ³ö´í: module 'config.config' has no attribute 'MAIL_DEFAULT_SENDER'
+2025-05-03 02:18:33,718 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:18:33] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 02:19:52,676 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 02:19:52,676 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 02:19:52,677 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:19:53,567 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:19:53,569 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:19:54,132 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:54] "GET / HTTP/1.1" 200 -
+2025-05-03 02:19:54,166 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:54] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 02:19:54,168 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:54] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:19:54,465 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:54] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:19:54,984 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:54] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:19:55,430 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:55] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:19:55,476 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:55] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:19:55,478 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:55] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:19:55,588 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:19:57,866 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:19:57] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:20:00,037 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:00] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 02:20:00,098 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:00] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:20:00,100 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:00] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:20:00,219 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:00] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:20:01,644 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:01] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:20:01,694 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:01] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:20:01,699 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:01] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:20:01,793 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:20:03,291 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:03] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:20:05,654 - controllers.auth_controller - INFO - ³¢ÊÔ·¢ËÍÑéÖ¤Âëµ½ÓÊÏä: 1943565996@qq.com
+2025-05-03 02:20:06,547 - controllers.auth_controller - ERROR - ·¢ËÍÑéÖ¤ÓÊ¼þ³ö´í: (-1, b'\x00\x00\x00')
+2025-05-03 02:20:06,549 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:06] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 02:20:09,753 - controllers.auth_controller - INFO - ³¢ÊÔ·¢ËÍÑéÖ¤Âëµ½ÓÊÏä: 1943565996@qq.com
+2025-05-03 02:20:11,279 - controllers.auth_controller - ERROR - ·¢ËÍÑéÖ¤ÓÊ¼þ³ö´í: (-1, b'\x00\x00\x00')
+2025-05-03 02:20:11,282 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:11] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 02:20:49,415 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:20:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:21:13,573 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-05-03 02:21:13,575 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:21:13] "[31m[1mPOST /auth/login HTTP/1.1[0m" 400 -
+2025-05-03 02:21:13,744 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:21:13] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:21:37,628 - controllers.auth_controller - INFO - ³¢ÊÔ·¢ËÍÑéÖ¤Âëµ½ÓÊÏä: 1943565996@qq.com
+2025-05-03 02:21:38,590 - controllers.auth_controller - ERROR - ·¢ËÍÑéÖ¤ÓÊ¼þ³ö´í: (-1, b'\x00\x00\x00')
+2025-05-03 02:21:38,592 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:21:38] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 02:23:49,995 - werkzeug - INFO -  * Detected change in 'D:\\test\\models\\utility\\MessageModel.py', reloading
+2025-05-03 02:23:50,190 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:23:51,217 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:23:51,219 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:24:26,115 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\auth_controller.py', reloading
+2025-05-03 02:24:26,216 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:24:27,079 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:24:27,080 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:25:01,944 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\auth_controller.py', reloading
+2025-05-03 02:25:02,029 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:32:36,304 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 02:32:36,305 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 02:32:36,306 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:32:37,121 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:32:37,122 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:32:38,271 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:38] "GET / HTTP/1.1" 200 -
+2025-05-03 02:32:38,308 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:38] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:32:38,310 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:38] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 02:32:38,628 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:38] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:32:39,081 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:39] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:32:39,828 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:39] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:32:39,869 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:39] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:32:39,873 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:39] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:32:39,966 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:39] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:32:45,160 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:45] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:32:45,221 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:45] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:32:45,226 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:45] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:32:45,327 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:32:47,633 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:47] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 02:32:47,683 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:47] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:32:47,689 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:47] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:32:47,782 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:47] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:32:54,097 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:54] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:32:54,153 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:54] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:32:54,155 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:54] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:32:54,254 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:32:54] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:33:02,669 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-05-03 02:33:02,671 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:02] "[31m[1mPOST /auth/send_verification HTTP/1.1[0m" 400 -
+2025-05-03 02:33:05,700 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:05] "[35m[1mGET /course/search HTTP/1.1[0m" 500 -
+2025-05-03 02:33:05,766 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:05] "[36mGET /course/search?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 02:33:05,769 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:05] "[36mGET /course/search?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 02:33:05,797 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:05] "GET /course/search?__debugger__=yes&cmd=resource&f=console.png&s=7mXcxcHrdQIg3Hv2zRhu HTTP/1.1" 200 -
+2025-05-03 02:33:05,798 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:05] "[36mGET /course/search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 02:33:08,049 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:33:09,293 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:09] "GET / HTTP/1.1" 200 -
+2025-05-03 02:33:09,341 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:09] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:33:09,344 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:09] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 02:33:09,347 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:09] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:33:09,448 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:09] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:33:10,001 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:10] "[35m[1mGET /about HTTP/1.1[0m" 500 -
+2025-05-03 02:33:10,018 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:10] "[36mGET /about?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 02:33:10,020 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:10] "[36mGET /about?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 02:33:10,086 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:10] "GET /about?__debugger__=yes&cmd=resource&f=console.png&s=7mXcxcHrdQIg3Hv2zRhu HTTP/1.1" 200 -
+2025-05-03 02:33:10,087 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:10] "[36mGET /about?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 02:33:11,225 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:11] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:33:15,164 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:15] "[35m[1mGET /course/organization/1 HTTP/1.1[0m" 500 -
+2025-05-03 02:33:15,182 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:15] "GET /course/organization/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 02:33:15,183 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:15] "GET /course/organization/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 02:33:15,253 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:15] "GET /course/organization/1?__debugger__=yes&cmd=resource&f=console.png&s=7mXcxcHrdQIg3Hv2zRhu HTTP/1.1" 200 -
+2025-05-03 02:33:15,254 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:15] "GET /course/organization/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 02:33:15,314 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:15] "[36mGET /course/organization/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 02:33:16,827 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:33:26,478 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:26] "[35m[1mGET /about HTTP/1.1[0m" 500 -
+2025-05-03 02:33:26,497 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:26] "[36mGET /about?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 02:33:26,501 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:26] "[36mGET /about?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 02:33:26,611 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:26] "[36mGET /about?__debugger__=yes&cmd=resource&f=console.png&s=7mXcxcHrdQIg3Hv2zRhu HTTP/1.1[0m" 304 -
+2025-05-03 02:33:26,612 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:26] "[36mGET /about?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 02:33:27,969 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:33:27] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:34:45,188 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:34:45] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:34:45,231 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:34:45] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:34:45,233 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:34:45] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:34:45,385 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:34:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:35:07,338 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-05-03 02:35:07,340 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:35:07] "[31m[1mPOST /auth/send_verification HTTP/1.1[0m" 400 -
+2025-05-03 02:35:32,672 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-05-03 02:35:32,673 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:35:32] "[31m[1mPOST /auth/register HTTP/1.1[0m" 400 -
+2025-05-03 02:35:32,810 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:35:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:50:18,154 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 02:50:18,154 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 02:50:18,155 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 02:50:18,976 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 02:50:18,978 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 02:50:19,374 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:19] "GET / HTTP/1.1" 200 -
+2025-05-03 02:50:19,410 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:19] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:50:19,411 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:19] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 02:50:19,730 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:19] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:50:20,232 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:50:26,500 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:26] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 02:50:26,564 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:26] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:50:26,571 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:26] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:50:26,671 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:26] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:50:28,365 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:28] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 02:50:28,422 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:28] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 02:50:28,423 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:28] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 02:50:28,511 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 02:50:32,638 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 02:50:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:28:22,426 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:28:22,427 - mail.log - INFO - Peer: ('127.0.0.1', 63758)
+2025-05-03 12:28:22,427 - mail.log - INFO - ('127.0.0.1', 63758) handling connection
+2025-05-03 12:28:22,429 - mail.log - INFO - ('127.0.0.1', 63758) EOF received
+2025-05-03 12:28:22,430 - mail.log - INFO - ('127.0.0.1', 63758) Connection lost during _handle_client()
+2025-05-03 12:28:22,430 - mail.log - INFO - ('127.0.0.1', 63758) connection lost
+2025-05-03 12:28:22,684 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:28:22,731 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 12:28:22,731 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 12:28:22,733 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:32:20,938 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:32:20,938 - mail.log - INFO - Peer: ('127.0.0.1', 64339)
+2025-05-03 12:32:20,938 - mail.log - INFO - ('127.0.0.1', 64339) handling connection
+2025-05-03 12:32:20,939 - mail.log - INFO - ('127.0.0.1', 64339) EOF received
+2025-05-03 12:32:20,939 - mail.log - INFO - ('127.0.0.1', 64339) Connection lost during _handle_client()
+2025-05-03 12:32:20,939 - mail.log - INFO - ('127.0.0.1', 64339) connection lost
+2025-05-03 12:32:21,140 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:32:21,158 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 12:32:21,158 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 12:32:21,159 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:34:05,430 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:34:05,451 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 12:34:05,451 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 12:34:05,453 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:34:06,434 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:34:06,435 - mail.log - INFO - Peer: ('127.0.0.1', 64609)
+2025-05-03 12:34:06,435 - mail.log - INFO - ('127.0.0.1', 64609) handling connection
+2025-05-03 12:34:06,435 - mail.log - INFO - ('127.0.0.1', 64609) EOF received
+2025-05-03 12:34:06,435 - mail.log - INFO - ('127.0.0.1', 64609) Connection lost during _handle_client()
+2025-05-03 12:34:06,435 - mail.log - INFO - ('127.0.0.1', 64609) connection lost
+2025-05-03 12:34:06,529 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:34:06,541 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:34:06,543 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:34:10,565 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 12:34:10,566 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:10] "GET / HTTP/1.1" 200 -
+2025-05-03 12:34:10,587 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:34:10,658 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:10] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:34:10,731 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:34:10,737 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:10] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 12:34:11,197 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:34:11,208 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:11] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:34:12,737 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:34:12,738 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:12] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 12:34:13,002 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:34:13,015 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:13] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:34:13,071 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:34:13,082 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:13] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:34:13,437 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:34:13,511 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:13] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:34:29,514 - flask_wtf.csrf - INFO - The CSRF token is missing.
+2025-05-03 12:34:29,516 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:34:29,516 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:34:29] "[31m[1mPOST /auth/send_verification HTTP/1.1[0m" 400 -
+2025-05-03 12:36:48,395 - werkzeug - INFO -  * Detected change in 'D:\\test\\app.py', reloading
+2025-05-03 12:36:48,501 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:36:49,603 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:36:49,604 - mail.log - INFO - Peer: ('127.0.0.1', 64710)
+2025-05-03 12:36:49,604 - mail.log - INFO - ('127.0.0.1', 64710) handling connection
+2025-05-03 12:36:49,611 - mail.log - INFO - ('127.0.0.1', 64710) EOF received
+2025-05-03 12:36:49,611 - mail.log - INFO - ('127.0.0.1', 64710) Connection lost during _handle_client()
+2025-05-03 12:36:49,611 - mail.log - INFO - ('127.0.0.1', 64710) connection lost
+2025-05-03 12:36:49,843 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:36:49,867 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:36:49,869 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:36:51,553 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:36:51,568 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 12:36:51,568 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 12:36:51,569 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:36:52,651 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:36:52,652 - mail.log - INFO - Peer: ('127.0.0.1', 64720)
+2025-05-03 12:36:52,652 - mail.log - INFO - ('127.0.0.1', 64720) handling connection
+2025-05-03 12:36:52,652 - mail.log - INFO - ('127.0.0.1', 64720) EOF received
+2025-05-03 12:36:52,652 - mail.log - INFO - ('127.0.0.1', 64720) Connection lost during _handle_client()
+2025-05-03 12:36:52,652 - mail.log - INFO - ('127.0.0.1', 64720) connection lost
+2025-05-03 12:36:52,771 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:36:52,782 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:36:52,784 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:36:55,170 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 12:36:55,197 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:36:55] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-03 12:36:55,258 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:36:55] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 12:36:55,409 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:36:55] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 12:36:55,865 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:36:55] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=ByJOvcBGMdHpVCNdeQLW HTTP/1.1" 200 -
+2025-05-03 12:36:55,865 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:36:55] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 12:36:56,115 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:36:56] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 12:37:10,250 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:37:10,268 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:10] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-03 12:37:10,541 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:10] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 12:37:10,604 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:10] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 12:37:10,943 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:10] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 12:37:10,943 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:10] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=ByJOvcBGMdHpVCNdeQLW HTTP/1.1[0m" 304 -
+2025-05-03 12:37:53,269 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:37:53,286 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 12:37:53,286 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 12:37:53,288 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:37:54,288 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:37:54,288 - mail.log - INFO - Peer: ('127.0.0.1', 64783)
+2025-05-03 12:37:54,288 - mail.log - INFO - ('127.0.0.1', 64783) handling connection
+2025-05-03 12:37:54,298 - mail.log - INFO - ('127.0.0.1', 64783) EOF received
+2025-05-03 12:37:54,298 - mail.log - INFO - ('127.0.0.1', 64783) Connection lost during _handle_client()
+2025-05-03 12:37:54,298 - mail.log - INFO - ('127.0.0.1', 64783) connection lost
+2025-05-03 12:37:54,433 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:37:54,442 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:37:54,443 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:37:56,706 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 12:37:56,714 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:56] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-03 12:37:56,752 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:56] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 12:37:56,944 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:56] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 12:37:57,367 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:57] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=ydKSdQpdLIYgy719WLBu HTTP/1.1" 200 -
+2025-05-03 12:37:57,367 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:37:57] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 12:38:57,966 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:38:57,983 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 12:38:57,983 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 12:38:57,984 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:38:58,791 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:38:58,792 - mail.log - INFO - Peer: ('127.0.0.1', 64858)
+2025-05-03 12:38:58,792 - mail.log - INFO - ('127.0.0.1', 64858) handling connection
+2025-05-03 12:38:58,798 - mail.log - INFO - ('127.0.0.1', 64858) EOF received
+2025-05-03 12:38:58,798 - mail.log - INFO - ('127.0.0.1', 64858) Connection lost during _handle_client()
+2025-05-03 12:38:58,798 - mail.log - INFO - ('127.0.0.1', 64858) connection lost
+2025-05-03 12:38:58,873 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:38:58,882 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:38:58,883 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:39:00,468 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 12:39:00,468 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:00] "GET / HTTP/1.1" 200 -
+2025-05-03 12:39:00,488 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:39:00,496 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:00] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:39:00,681 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:39:00,688 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:00] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 12:39:01,102 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:39:01,112 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:01] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:39:03,030 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:39:03,030 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:03] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 12:39:03,344 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:39:03,351 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:39:03,362 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:03] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:39:03,369 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:03] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:39:03,723 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:39:03,734 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:03] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:39:09,049 - models.utility.EmailNotificationModel - ERROR - ÓÊ¼þ·¢ËÍÊ§°Ü: [WinError 10061] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+2025-05-03 12:39:09,112 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:39:09,112 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:39:09] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 12:43:13,428 - werkzeug - INFO -  * Detected change in 'D:\\test\\models\\utility\\EmailNotificationModel.py', reloading
+2025-05-03 12:43:13,526 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:43:14,340 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:43:14,340 - mail.log - INFO - Peer: ('127.0.0.1', 64982)
+2025-05-03 12:43:14,340 - mail.log - INFO - ('127.0.0.1', 64982) handling connection
+2025-05-03 12:43:14,353 - mail.log - INFO - ('127.0.0.1', 64982) EOF received
+2025-05-03 12:43:14,353 - mail.log - INFO - ('127.0.0.1', 64982) Connection lost during _handle_client()
+2025-05-03 12:43:14,353 - mail.log - INFO - ('127.0.0.1', 64982) connection lost
+2025-05-03 12:43:14,485 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:43:14,496 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:43:14,497 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:43:18,962 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 12:43:18,962 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:18] "GET / HTTP/1.1" 200 -
+2025-05-03 12:43:18,980 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:18,989 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:18] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:43:19,197 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:19,203 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:19] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 12:43:19,585 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:19,602 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:19] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:43:20,018 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:20,043 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:43:21,034 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:21,035 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:21] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 12:43:21,128 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:21,151 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:21] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:43:21,287 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:21,306 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:21] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:43:21,377 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:21,396 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:43:24,010 - root - INFO - [¿ª·¢ÓÊ¼þ] ÊÕ¼þÈË: 1943565996@qq.com, Ö÷Ìâ: E-DBAÓÊÏäÑéÖ¤Âë, ÄÚÈÝ: 
+        <html>
+        <body>
+            <h2>E-DBAÓÊÏäÑéÖ¤Âë</h2>
+            <p>ÄúºÃ£¬</p>
+            <p...
+2025-05-03 12:43:24,011 - root - ERROR - ÓÊ¼þ·¢ËÍÊ§°Ü: type object 'EmailNotificationModel' has no attribute 'create_notification'
+2025-05-03 12:43:24,011 - controllers.auth_controller - ERROR - ·¢ËÍÑéÖ¤ÓÊ¼þ³ö´í: type object 'EmailNotificationModel' has no attribute 'create_notification'
+2025-05-03 12:43:24,014 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:43:24,015 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:43:24] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 12:50:10,492 - werkzeug - INFO -  * Detected change in 'D:\\test\\models\\utility\\EmailNotificationModel.py', reloading
+2025-05-03 12:50:10,717 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:50:11,654 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:50:11,655 - mail.log - INFO - Peer: ('127.0.0.1', 65133)
+2025-05-03 12:50:11,655 - mail.log - INFO - ('127.0.0.1', 65133) handling connection
+2025-05-03 12:50:11,655 - mail.log - INFO - ('127.0.0.1', 65133) EOF received
+2025-05-03 12:50:11,655 - mail.log - INFO - ('127.0.0.1', 65133) Connection lost during _handle_client()
+2025-05-03 12:50:11,655 - mail.log - INFO - ('127.0.0.1', 65133) connection lost
+2025-05-03 12:50:11,846 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:50:11,857 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:50:11,859 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:50:38,617 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\auth_controller.py', reloading
+2025-05-03 12:50:38,711 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:50:39,549 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:50:39,549 - mail.log - INFO - Peer: ('127.0.0.1', 65154)
+2025-05-03 12:50:39,549 - mail.log - INFO - ('127.0.0.1', 65154) handling connection
+2025-05-03 12:50:39,549 - mail.log - INFO - ('127.0.0.1', 65154) EOF received
+2025-05-03 12:50:39,549 - mail.log - INFO - ('127.0.0.1', 65154) Connection lost during _handle_client()
+2025-05-03 12:50:39,549 - mail.log - INFO - ('127.0.0.1', 65154) connection lost
+2025-05-03 12:50:39,628 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:50:39,636 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:50:39,638 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:52:15,604 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:52:15,621 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 12:52:15,621 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 12:52:15,622 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:52:16,446 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:52:16,446 - mail.log - INFO - Peer: ('127.0.0.1', 65186)
+2025-05-03 12:52:16,446 - mail.log - INFO - ('127.0.0.1', 65186) handling connection
+2025-05-03 12:52:16,463 - mail.log - INFO - ('127.0.0.1', 65186) EOF received
+2025-05-03 12:52:16,464 - mail.log - INFO - ('127.0.0.1', 65186) Connection lost during _handle_client()
+2025-05-03 12:52:16,464 - mail.log - INFO - ('127.0.0.1', 65186) connection lost
+2025-05-03 12:52:16,547 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:52:16,556 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:52:16,557 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:52:20,916 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 12:52:20,916 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:20] "GET / HTTP/1.1" 200 -
+2025-05-03 12:52:20,936 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:20,944 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:20] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:52:21,133 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:21,140 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:21] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 12:52:21,540 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:21,567 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:21] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:52:21,997 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:22,007 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:52:22,769 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:22,770 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:22] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 12:52:22,802 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:22,810 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:22] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:52:22,934 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:22,946 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:22] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:52:23,304 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:23,327 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:52:30,299 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:30,300 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:30] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 12:52:30,607 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:30,619 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:30] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:52:30,629 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:30,655 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:30] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:52:31,023 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:31,063 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:52:33,502 - models.utility.EmailNotificationModel - INFO - [¿ª·¢ÓÊ¼þ] ÊÕ¼þÈË: 1943565996@qq.com, Ö÷Ìâ: E-DBAÓÊÏäÑéÖ¤Âë, ÄÚÈÝ: 
+        <html>
+        <body>
+            <h2>E-DBAÓÊÏäÑéÖ¤Âë</h2>
+            <p>ÄúºÃ£¬</p>
+            <p...
+2025-05-03 12:52:33,530 - models.utility.EmailNotificationModel - ERROR - ÓÊ¼þ·¢ËÍÊ§°Ü: 1054 (42S22): Unknown column 'created_at' in 'field list'
+2025-05-03 12:52:33,548 - controllers.auth_controller - ERROR - ·¢ËÍÑéÖ¤ÓÊ¼þ³ö´í: 1054 (42S22): Unknown column 'created_at' in 'field list'
+2025-05-03 12:52:33,553 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:52:33,553 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:52:33] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 12:53:51,768 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:53:51,784 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 12:53:51,784 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 12:53:51,785 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 12:53:52,624 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 12:53:52,624 - mail.log - INFO - Peer: ('127.0.0.1', 65272)
+2025-05-03 12:53:52,624 - mail.log - INFO - ('127.0.0.1', 65272) handling connection
+2025-05-03 12:53:52,624 - mail.log - INFO - ('127.0.0.1', 65272) EOF received
+2025-05-03 12:53:52,625 - mail.log - INFO - ('127.0.0.1', 65272) Connection lost during _handle_client()
+2025-05-03 12:53:52,625 - mail.log - INFO - ('127.0.0.1', 65272) connection lost
+2025-05-03 12:53:52,699 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 12:53:52,707 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 12:53:52,708 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 12:53:57,130 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 12:53:57,130 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:57] "GET / HTTP/1.1" 200 -
+2025-05-03 12:53:57,148 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:53:57,157 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:57] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:53:57,359 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:53:57,366 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:57] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 12:53:57,765 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:53:57,781 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:57] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:53:58,194 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:53:58,201 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:53:59,008 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:53:59,008 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:59] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 12:53:59,107 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:53:59,123 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:59] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:53:59,267 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:53:59,288 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:59] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:53:59,344 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:53:59,360 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:53:59] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:54:01,371 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:01,371 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:01] "GET /auth/register HTTP/1.1" 200 -
+2025-05-03 12:54:01,687 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:01,700 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:01] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:54:01,707 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:01,724 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:01] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:54:02,069 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:02,084 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:02] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 12:54:04,953 - models.utility.EmailNotificationModel - INFO - [¿ª·¢ÓÊ¼þ] ÊÕ¼þÈË: 1943565996@qq.com, Ö÷Ìâ: E-DBAÓÊÏäÑéÖ¤Âë, ÄÚÈÝ: 
+        <html>
+        <body>
+            <h2>E-DBAÓÊÏäÑéÖ¤Âë</h2>
+            <p>ÄúºÃ£¬</p>
+            <p...
+2025-05-03 12:54:04,999 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:04,999 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:04] "POST /auth/send_verification HTTP/1.1" 200 -
+2025-05-03 12:54:23,132 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:23,133 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:23] "[32mPOST /auth/register HTTP/1.1[0m" 302 -
+2025-05-03 12:54:23,150 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:23,150 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:23] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 12:54:23,368 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:23,388 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:23] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 12:54:23,483 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:23,501 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:23] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 12:54:23,855 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 12:54:23,866 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 12:54:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:00:08,738 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:08,738 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:08] "GET / HTTP/1.1" 200 -
+2025-05-03 13:00:08,805 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:08,811 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:08] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:00:08,969 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:08,979 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:08] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 13:00:09,077 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:09,087 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:09] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:00:09,164 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:09,170 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:09] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:00:13,572 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:13,572 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:13] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 13:00:13,883 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:13,895 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:13] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:00:13,899 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:13,912 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:13] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:00:14,258 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:14,270 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:00:19,011 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:19,011 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:19] "POST /auth/login HTTP/1.1" 200 -
+2025-05-03 13:00:19,329 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:19,340 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:19] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:00:19,343 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:19,352 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:19] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:00:19,689 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:00:19,699 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:00:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:01:52,254 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:01:52,274 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:01:52,274 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:01:52,275 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:01:53,046 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:01:53,047 - mail.log - INFO - Peer: ('127.0.0.1', 49171)
+2025-05-03 13:01:53,047 - mail.log - INFO - ('127.0.0.1', 49171) handling connection
+2025-05-03 13:01:53,066 - mail.log - INFO - ('127.0.0.1', 49171) EOF received
+2025-05-03 13:01:53,066 - mail.log - INFO - ('127.0.0.1', 49171) Connection lost during _handle_client()
+2025-05-03 13:01:53,067 - mail.log - INFO - ('127.0.0.1', 49171) connection lost
+2025-05-03 13:01:53,150 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:01:53,162 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:01:53,163 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:01:55,690 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:01:55,690 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:55] "GET / HTTP/1.1" 200 -
+2025-05-03 13:01:55,710 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:01:55,718 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:55] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:01:55,920 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:01:55,927 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:55] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 13:01:56,322 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:01:56,333 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:56] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:01:56,762 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:01:56,769 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:01:58,133 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:01:58,133 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:58] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 13:01:58,217 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:01:58,237 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:58] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:01:58,396 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:01:58,412 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:58] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:01:58,463 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:01:58,481 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:01:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:11:53,553 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\admin_controller.py', reloading
+2025-05-03 13:11:53,636 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:11:54,535 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:11:54,535 - mail.log - INFO - Peer: ('127.0.0.1', 49378)
+2025-05-03 13:11:54,536 - mail.log - INFO - ('127.0.0.1', 49378) handling connection
+2025-05-03 13:11:54,555 - mail.log - INFO - ('127.0.0.1', 49378) EOF received
+2025-05-03 13:11:54,555 - mail.log - INFO - ('127.0.0.1', 49378) Connection lost during _handle_client()
+2025-05-03 13:11:54,555 - mail.log - INFO - ('127.0.0.1', 49378) connection lost
+2025-05-03 13:11:54,737 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:11:54,748 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:11:54,749 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:12:04,591 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:12:04,591 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:04] "GET / HTTP/1.1" 200 -
+2025-05-03 13:12:04,613 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:12:04,632 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:04] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:12:04,822 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:12:04,839 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:04] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 13:12:05,226 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:12:05,245 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:05] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:12:05,655 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:12:05,669 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:12:08,752 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:12:08,752 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:08] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 13:12:08,835 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:12:08,842 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:08] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:12:09,012 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:12:09,023 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:09] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:12:09,083 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:12:09,091 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:12:09] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:12:35,147 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:12:35,168 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:12:35,168 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:12:35,169 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:12:35,946 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:12:35,946 - mail.log - INFO - Peer: ('127.0.0.1', 49704)
+2025-05-03 13:12:35,946 - mail.log - INFO - ('127.0.0.1', 49704) handling connection
+2025-05-03 13:12:35,947 - mail.log - INFO - ('127.0.0.1', 49704) EOF received
+2025-05-03 13:12:35,947 - mail.log - INFO - ('127.0.0.1', 49704) Connection lost during _handle_client()
+2025-05-03 13:12:35,947 - mail.log - INFO - ('127.0.0.1', 49704) connection lost
+2025-05-03 13:12:36,025 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:12:36,033 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:12:36,035 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:14:11,106 - werkzeug - INFO -  * Detected change in 'D:\\test\\create_tadmin.py', reloading
+2025-05-03 13:14:11,204 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:14:12,070 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:14:12,071 - mail.log - INFO - Peer: ('127.0.0.1', 49765)
+2025-05-03 13:14:12,071 - mail.log - INFO - ('127.0.0.1', 49765) handling connection
+2025-05-03 13:14:12,071 - mail.log - INFO - ('127.0.0.1', 49765) EOF received
+2025-05-03 13:14:12,071 - mail.log - INFO - ('127.0.0.1', 49765) Connection lost during _handle_client()
+2025-05-03 13:14:12,071 - mail.log - INFO - ('127.0.0.1', 49765) connection lost
+2025-05-03 13:14:12,177 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:14:12,190 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:14:12,192 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:15:19,124 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:15:19,140 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:15:19,140 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:15:19,141 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:15:19,935 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:15:19,935 - mail.log - INFO - Peer: ('127.0.0.1', 49792)
+2025-05-03 13:15:19,935 - mail.log - INFO - ('127.0.0.1', 49792) handling connection
+2025-05-03 13:15:19,936 - mail.log - INFO - ('127.0.0.1', 49792) EOF received
+2025-05-03 13:15:19,936 - mail.log - INFO - ('127.0.0.1', 49792) Connection lost during _handle_client()
+2025-05-03 13:15:19,936 - mail.log - INFO - ('127.0.0.1', 49792) connection lost
+2025-05-03 13:15:20,002 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:15:20,011 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:15:20,012 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:15:24,018 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:15:24,019 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:24] "GET / HTTP/1.1" 200 -
+2025-05-03 13:15:24,039 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:15:24,048 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:24] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:15:24,252 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:15:24,258 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:24] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 13:15:24,642 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:15:24,653 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:24] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:15:25,066 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:15:25,073 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:15:25,705 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:15:25,705 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:25] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 13:15:25,785 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:15:25,807 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:25] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:15:25,950 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:15:25,976 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:25] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:15:26,042 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:15:26,061 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:15:26] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:16:18,933 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:16:18,948 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:16:18,948 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:16:18,949 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:16:19,725 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:16:19,725 - mail.log - INFO - Peer: ('127.0.0.1', 49844)
+2025-05-03 13:16:19,725 - mail.log - INFO - ('127.0.0.1', 49844) handling connection
+2025-05-03 13:16:19,725 - mail.log - INFO - ('127.0.0.1', 49844) EOF received
+2025-05-03 13:16:19,726 - mail.log - INFO - ('127.0.0.1', 49844) Connection lost during _handle_client()
+2025-05-03 13:16:19,726 - mail.log - INFO - ('127.0.0.1', 49844) connection lost
+2025-05-03 13:16:19,795 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:16:19,803 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:16:19,805 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:17:01,970 - werkzeug - INFO -  * Detected change in 'D:\\test\\create_tadmin.py', reloading
+2025-05-03 13:17:02,150 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:17:03,000 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:17:03,000 - mail.log - INFO - Peer: ('127.0.0.1', 49870)
+2025-05-03 13:17:03,000 - mail.log - INFO - ('127.0.0.1', 49870) handling connection
+2025-05-03 13:17:03,001 - mail.log - INFO - ('127.0.0.1', 49870) EOF received
+2025-05-03 13:17:03,001 - mail.log - INFO - ('127.0.0.1', 49870) Connection lost during _handle_client()
+2025-05-03 13:17:03,001 - mail.log - INFO - ('127.0.0.1', 49870) connection lost
+2025-05-03 13:17:03,123 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:17:03,134 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:17:03,136 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:17:11,657 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:17:11,670 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:17:11,670 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:17:11,671 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:17:12,457 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:17:12,457 - mail.log - INFO - Peer: ('127.0.0.1', 49881)
+2025-05-03 13:17:12,457 - mail.log - INFO - ('127.0.0.1', 49881) handling connection
+2025-05-03 13:17:12,457 - mail.log - INFO - ('127.0.0.1', 49881) EOF received
+2025-05-03 13:17:12,457 - mail.log - INFO - ('127.0.0.1', 49881) Connection lost during _handle_client()
+2025-05-03 13:17:12,457 - mail.log - INFO - ('127.0.0.1', 49881) connection lost
+2025-05-03 13:17:12,531 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:17:12,540 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:17:12,542 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:17:28,478 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:17:28,478 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:28] "GET / HTTP/1.1" 200 -
+2025-05-03 13:17:28,502 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:17:28,523 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:28] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:17:28,678 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:17:28,701 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:28] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 13:17:29,131 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:17:29,156 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:29] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:17:29,558 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:17:29,565 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:17:30,261 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:17:30,261 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:30] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 13:17:30,308 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:17:30,333 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:30] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:17:30,499 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:17:30,513 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:30] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:17:30,591 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:17:30,609 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:17:30] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:20:37,449 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\auth_controller.py', reloading
+2025-05-03 13:20:37,584 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:20:38,458 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:20:38,458 - mail.log - INFO - Peer: ('127.0.0.1', 49986)
+2025-05-03 13:20:38,458 - mail.log - INFO - ('127.0.0.1', 49986) handling connection
+2025-05-03 13:20:38,458 - mail.log - INFO - ('127.0.0.1', 49986) EOF received
+2025-05-03 13:20:38,459 - mail.log - INFO - ('127.0.0.1', 49986) Connection lost during _handle_client()
+2025-05-03 13:20:38,459 - mail.log - INFO - ('127.0.0.1', 49986) connection lost
+2025-05-03 13:20:38,582 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:20:38,596 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:20:38,598 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:22:12,484 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:22:12,502 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:22:12,502 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:22:12,503 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:22:13,290 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:22:13,290 - mail.log - INFO - Peer: ('127.0.0.1', 50023)
+2025-05-03 13:22:13,290 - mail.log - INFO - ('127.0.0.1', 50023) handling connection
+2025-05-03 13:22:13,302 - mail.log - INFO - ('127.0.0.1', 50023) EOF received
+2025-05-03 13:22:13,302 - mail.log - INFO - ('127.0.0.1', 50023) Connection lost during _handle_client()
+2025-05-03 13:22:13,302 - mail.log - INFO - ('127.0.0.1', 50023) connection lost
+2025-05-03 13:22:13,382 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:22:13,391 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:22:13,392 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:22:14,819 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:22:14,819 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:14] "GET / HTTP/1.1" 200 -
+2025-05-03 13:22:14,840 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:22:14,848 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:14] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:22:15,059 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:22:15,065 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:15] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 13:22:15,444 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:22:15,456 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:15] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:22:15,861 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:22:15,868 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:15] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:22:16,761 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:22:16,761 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:16] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 13:22:16,844 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:22:16,850 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:16] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:22:17,020 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:22:17,033 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:17] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:22:17,099 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:22:17,105 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:22:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:24:01,774 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:01,775 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:01] "POST /auth/login HTTP/1.1" 200 -
+2025-05-03 13:24:01,805 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:01,828 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:01] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:24:02,016 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:02,030 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:02] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:24:02,383 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:02,408 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:02] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:24:18,835 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:24:18,850 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:24:18,850 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:24:18,852 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:24:19,700 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:24:19,700 - mail.log - INFO - Peer: ('127.0.0.1', 50138)
+2025-05-03 13:24:19,700 - mail.log - INFO - ('127.0.0.1', 50138) handling connection
+2025-05-03 13:24:19,709 - mail.log - INFO - ('127.0.0.1', 50138) EOF received
+2025-05-03 13:24:19,710 - mail.log - INFO - ('127.0.0.1', 50138) Connection lost during _handle_client()
+2025-05-03 13:24:19,710 - mail.log - INFO - ('127.0.0.1', 50138) connection lost
+2025-05-03 13:24:19,807 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:24:19,818 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:24:19,819 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:24:22,502 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:24:22,502 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:22] "GET / HTTP/1.1" 200 -
+2025-05-03 13:24:22,519 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:22,528 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:22] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:24:22,739 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:22,746 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:22] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 13:24:23,175 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:23,186 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:23] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:24:23,609 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:23,616 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:24:24,120 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:24,120 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:24] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 13:24:24,184 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:24,190 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:24] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:24:24,364 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:24,371 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:24] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:24:24,450 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:24,457 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:24] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:24:32,930 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:32,930 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:32] "POST /auth/login HTTP/1.1" 200 -
+2025-05-03 13:24:33,224 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:33,267 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:33] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:24:33,268 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:33,318 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:33] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:24:33,663 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:24:33,674 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:24:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:25:18,982 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:25:18,983 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:25:18] "POST /auth/login HTTP/1.1" 200 -
+2025-05-03 13:25:19,304 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:25:19,304 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:25:19,325 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:25:19] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:25:19,327 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:25:19] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:25:19,557 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:25:19,568 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:25:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:27:29,074 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\auth_controller.py', reloading
+2025-05-03 13:27:29,176 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:27:30,025 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:27:30,025 - mail.log - INFO - Peer: ('127.0.0.1', 50239)
+2025-05-03 13:27:30,026 - mail.log - INFO - ('127.0.0.1', 50239) handling connection
+2025-05-03 13:27:30,026 - mail.log - INFO - ('127.0.0.1', 50239) EOF received
+2025-05-03 13:27:30,026 - mail.log - INFO - ('127.0.0.1', 50239) Connection lost during _handle_client()
+2025-05-03 13:27:30,026 - mail.log - INFO - ('127.0.0.1', 50239) connection lost
+2025-05-03 13:27:30,138 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:27:30,150 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:27:30,151 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:27:32,463 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:27:32,463 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:32] "GET / HTTP/1.1" 200 -
+2025-05-03 13:27:32,482 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:32,490 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:32] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:27:32,693 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:32,699 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:32] "[35m[1mGET /static/img/hero-image.svg HTTP/1.1[0m" 500 -
+2025-05-03 13:27:33,097 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:33,107 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:33] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:27:33,546 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:33,553 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:27:34,115 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:34,116 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:34] "GET /auth/login HTTP/1.1" 200 -
+2025-05-03 13:27:34,179 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:34,185 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:34] "[35m[1mGET /static/css/style.css HTTP/1.1[0m" 500 -
+2025-05-03 13:27:34,374 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:34,383 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:34] "[35m[1mGET /static/js/main.js HTTP/1.1[0m" 500 -
+2025-05-03 13:27:34,451 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:34,457 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:34] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-03 13:27:40,244 - __main__ - INFO - User 7 accessed auth.login
+2025-05-03 13:27:40,246 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:40,246 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:40] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-05-03 13:27:40,525 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:27:40,533 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:40] "[35m[1mGET /admin/tadmin/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:27:41,026 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:41] "GET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 13:27:41,032 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:41] "GET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 13:27:41,117 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:41] "GET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=6bJ5E7AdxG0go6BH6cUr HTTP/1.1" 200 -
+2025-05-03 13:27:41,366 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:41] "GET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 13:27:41,375 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:27:41] "[36mGET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:29:09,653 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\admin_controller.py', reloading
+2025-05-03 13:29:09,740 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:29:10,564 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:29:10,565 - mail.log - INFO - Peer: ('127.0.0.1', 50333)
+2025-05-03 13:29:10,565 - mail.log - INFO - ('127.0.0.1', 50333) handling connection
+2025-05-03 13:29:10,566 - mail.log - INFO - ('127.0.0.1', 50333) EOF received
+2025-05-03 13:29:10,566 - mail.log - INFO - ('127.0.0.1', 50333) Connection lost during _handle_client()
+2025-05-03 13:29:10,566 - mail.log - INFO - ('127.0.0.1', 50333) connection lost
+2025-05-03 13:29:10,771 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:29:10,788 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:29:10,790 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:29:12,392 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:29:12,396 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:29:12,396 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:29:12] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:29:12,462 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:29:12,485 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:29:12] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:29:12,679 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:29:12] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-03 13:29:12,804 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:29:12] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-03 13:29:13,160 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:29:13] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=NpWhlzI3epoP3Z0j1tGp HTTP/1.1" 200 -
+2025-05-03 13:29:13,160 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:29:13] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-03 13:29:13,414 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:29:13] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:31:56,653 - __main__ - INFO - User 7 accessed auth.login
+2025-05-03 13:31:56,655 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:31:56,656 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:31:56] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-05-03 13:31:56,696 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:31:56,707 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:31:56] "[35m[1mGET /admin/tadmin/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:31:56,889 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:31:56] "[36mGET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:31:57,028 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:31:57] "[36mGET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:31:57,363 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:31:57] "GET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=NpWhlzI3epoP3Z0j1tGp HTTP/1.1" 200 -
+2025-05-03 13:31:57,364 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:31:57] "[36mGET /admin/tadmin/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:33:06,266 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:33:06,278 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:33:06,279 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:33:06,279 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:33:07,064 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:33:07,065 - mail.log - INFO - Peer: ('127.0.0.1', 50494)
+2025-05-03 13:33:07,065 - mail.log - INFO - ('127.0.0.1', 50494) handling connection
+2025-05-03 13:33:07,065 - mail.log - INFO - ('127.0.0.1', 50494) EOF received
+2025-05-03 13:33:07,065 - mail.log - INFO - ('127.0.0.1', 50494) Connection lost during _handle_client()
+2025-05-03 13:33:07,065 - mail.log - INFO - ('127.0.0.1', 50494) connection lost
+2025-05-03 13:33:07,144 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:33:07,153 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:33:07,154 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:33:08,700 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:33:08,708 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:33:08,708 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:08] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:33:08,755 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:33:08,762 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:08] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:33:08,996 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:08] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:33:09,089 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:09] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:33:09,428 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:09] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=p2fOHj2mpIIjnxYRAK0X HTTP/1.1" 200 -
+2025-05-03 13:33:09,428 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:09] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:33:55,757 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:33:55,771 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:33:55,771 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:33:55,772 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:33:56,556 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:33:56,556 - mail.log - INFO - Peer: ('127.0.0.1', 50547)
+2025-05-03 13:33:56,557 - mail.log - INFO - ('127.0.0.1', 50547) handling connection
+2025-05-03 13:33:56,557 - mail.log - INFO - ('127.0.0.1', 50547) EOF received
+2025-05-03 13:33:56,557 - mail.log - INFO - ('127.0.0.1', 50547) Connection lost during _handle_client()
+2025-05-03 13:33:56,557 - mail.log - INFO - ('127.0.0.1', 50547) connection lost
+2025-05-03 13:33:56,626 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:33:56,635 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:33:56,637 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:33:59,326 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:33:59,329 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:33:59,329 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:59] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:33:59,368 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:33:59,377 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:59] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:33:59,603 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:59] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:33:59,697 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:33:59] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:34:00,023 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:34:00] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=NQ9OQs1FU3TZr6tT3Nkv HTTP/1.1" 200 -
+2025-05-03 13:34:00,024 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:34:00] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:35:11,305 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\user_controller.py', reloading
+2025-05-03 13:35:11,402 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:35:12,239 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:35:12,239 - mail.log - INFO - Peer: ('127.0.0.1', 50598)
+2025-05-03 13:35:12,239 - mail.log - INFO - ('127.0.0.1', 50598) handling connection
+2025-05-03 13:35:12,256 - mail.log - INFO - ('127.0.0.1', 50598) EOF received
+2025-05-03 13:35:12,256 - mail.log - INFO - ('127.0.0.1', 50598) Connection lost during _handle_client()
+2025-05-03 13:35:12,256 - mail.log - INFO - ('127.0.0.1', 50598) connection lost
+2025-05-03 13:35:12,464 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:35:12,478 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:35:12,479 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:36:30,079 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:36:30,093 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:36:30,093 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:36:30,094 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:36:30,910 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:36:30,911 - mail.log - INFO - Peer: ('127.0.0.1', 50648)
+2025-05-03 13:36:30,911 - mail.log - INFO - ('127.0.0.1', 50648) handling connection
+2025-05-03 13:36:30,911 - mail.log - INFO - ('127.0.0.1', 50648) EOF received
+2025-05-03 13:36:30,911 - mail.log - INFO - ('127.0.0.1', 50648) Connection lost during _handle_client()
+2025-05-03 13:36:30,911 - mail.log - INFO - ('127.0.0.1', 50648) connection lost
+2025-05-03 13:36:30,981 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:36:30,990 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:36:30,991 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:36:32,733 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:36:32,737 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:36:32,737 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:36:32] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:36:32,785 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:36:32,792 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:36:32] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:36:33,028 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:36:33] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:36:33,106 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:36:33] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:36:33,432 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:36:33] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=9iTSGVqjyXp6t7DtsBVD HTTP/1.1" 200 -
+2025-05-03 13:36:33,433 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:36:33] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:37:37,140 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:37:37,153 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:37:37,153 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:37:37,154 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:37:37,976 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:37:37,976 - mail.log - INFO - Peer: ('127.0.0.1', 50705)
+2025-05-03 13:37:37,976 - mail.log - INFO - ('127.0.0.1', 50705) handling connection
+2025-05-03 13:37:37,976 - mail.log - INFO - ('127.0.0.1', 50705) EOF received
+2025-05-03 13:37:37,976 - mail.log - INFO - ('127.0.0.1', 50705) Connection lost during _handle_client()
+2025-05-03 13:37:37,976 - mail.log - INFO - ('127.0.0.1', 50705) connection lost
+2025-05-03 13:37:38,079 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:37:38,088 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:37:38,089 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:37:39,608 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:37:39,612 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:37:39,612 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:37:39] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:37:39,652 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:37:39,659 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:37:39] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:37:39,897 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:37:39] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:37:39,980 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:37:39] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:37:40,308 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:37:40] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=Ebu89Tc7YONx7sihsRVc HTTP/1.1" 200 -
+2025-05-03 13:37:40,308 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:37:40] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:42:07,131 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:42:07,143 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:42:07,144 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:42:07,144 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:42:07,932 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:42:07,932 - mail.log - INFO - Peer: ('127.0.0.1', 50819)
+2025-05-03 13:42:07,932 - mail.log - INFO - ('127.0.0.1', 50819) handling connection
+2025-05-03 13:42:07,932 - mail.log - INFO - ('127.0.0.1', 50819) EOF received
+2025-05-03 13:42:07,933 - mail.log - INFO - ('127.0.0.1', 50819) Connection lost during _handle_client()
+2025-05-03 13:42:07,933 - mail.log - INFO - ('127.0.0.1', 50819) connection lost
+2025-05-03 13:42:08,011 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:42:08,021 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:42:08,022 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:42:09,688 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:42:09,692 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:42:09,692 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:42:09] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:42:09,738 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:42:09,744 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:42:09] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:42:09,979 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:42:09] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:42:10,075 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:42:10] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:42:10,404 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:42:10] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=6pLa2Mq3pBjFDVPgAeVM HTTP/1.1" 200 -
+2025-05-03 13:42:10,405 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:42:10] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:43:44,709 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:43:44,723 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:43:44,724 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:43:44,725 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:43:45,511 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:43:45,512 - mail.log - INFO - Peer: ('127.0.0.1', 50884)
+2025-05-03 13:43:45,512 - mail.log - INFO - ('127.0.0.1', 50884) handling connection
+2025-05-03 13:43:45,512 - mail.log - INFO - ('127.0.0.1', 50884) EOF received
+2025-05-03 13:43:45,512 - mail.log - INFO - ('127.0.0.1', 50884) Connection lost during _handle_client()
+2025-05-03 13:43:45,512 - mail.log - INFO - ('127.0.0.1', 50884) connection lost
+2025-05-03 13:43:45,580 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:43:45,589 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:43:45,590 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:43:48,290 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:43:48,294 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:43:48,295 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:43:48] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:43:48,347 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:43:48,357 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:43:48] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:43:48,580 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:43:48] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:43:48,677 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:43:48] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:43:49,036 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:43:49] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=fJesn4hfTrLjMFcCzkRB HTTP/1.1" 200 -
+2025-05-03 13:43:49,036 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:43:49] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:49:37,035 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:49:37,062 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:49:37,062 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:49:37,064 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:49:37,853 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:49:37,853 - mail.log - INFO - Peer: ('127.0.0.1', 51023)
+2025-05-03 13:49:37,854 - mail.log - INFO - ('127.0.0.1', 51023) handling connection
+2025-05-03 13:49:37,854 - mail.log - INFO - ('127.0.0.1', 51023) EOF received
+2025-05-03 13:49:37,854 - mail.log - INFO - ('127.0.0.1', 51023) Connection lost during _handle_client()
+2025-05-03 13:49:37,854 - mail.log - INFO - ('127.0.0.1', 51023) connection lost
+2025-05-03 13:49:37,926 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:49:37,935 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:49:37,936 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:49:40,054 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:49:40,058 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:49:40,058 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:49:40] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:49:40,118 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:49:40,128 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:49:40] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:49:40,351 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:49:40] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:49:40,454 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:49:40] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:49:40,808 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:49:40] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=upAt5FqE8DCYG0dYnNqJ HTTP/1.1" 200 -
+2025-05-03 13:49:40,809 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:49:40] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:52:30,600 - werkzeug - INFO -  * Detected change in 'D:\\test\\app.py', reloading
+2025-05-03 13:52:30,707 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:52:31,546 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:52:31,546 - mail.log - INFO - Peer: ('127.0.0.1', 51096)
+2025-05-03 13:52:31,546 - mail.log - INFO - ('127.0.0.1', 51096) handling connection
+2025-05-03 13:52:31,557 - mail.log - INFO - ('127.0.0.1', 51096) EOF received
+2025-05-03 13:52:31,557 - mail.log - INFO - ('127.0.0.1', 51096) Connection lost during _handle_client()
+2025-05-03 13:52:31,557 - mail.log - INFO - ('127.0.0.1', 51096) connection lost
+2025-05-03 13:52:31,728 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:52:31,740 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:52:31,742 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:52:42,994 - werkzeug - INFO -  * Detected change in 'D:\\test\\app.py', reloading
+2025-05-03 13:52:43,114 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:52:43,928 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:52:43,928 - mail.log - INFO - Peer: ('127.0.0.1', 51113)
+2025-05-03 13:52:43,928 - mail.log - INFO - ('127.0.0.1', 51113) handling connection
+2025-05-03 13:52:43,939 - mail.log - INFO - ('127.0.0.1', 51113) EOF received
+2025-05-03 13:52:43,940 - mail.log - INFO - ('127.0.0.1', 51113) Connection lost during _handle_client()
+2025-05-03 13:52:43,940 - mail.log - INFO - ('127.0.0.1', 51113) connection lost
+2025-05-03 13:52:44,030 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:52:44,044 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:52:44,045 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:52:58,351 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:52:58,363 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 13:52:58,363 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 13:52:58,364 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 13:52:59,153 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 13:52:59,154 - mail.log - INFO - Peer: ('127.0.0.1', 51125)
+2025-05-03 13:52:59,154 - mail.log - INFO - ('127.0.0.1', 51125) handling connection
+2025-05-03 13:52:59,154 - mail.log - INFO - ('127.0.0.1', 51125) EOF received
+2025-05-03 13:52:59,154 - mail.log - INFO - ('127.0.0.1', 51125) Connection lost during _handle_client()
+2025-05-03 13:52:59,154 - mail.log - INFO - ('127.0.0.1', 51125) connection lost
+2025-05-03 13:52:59,224 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 13:52:59,233 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 13:52:59,234 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 13:53:00,998 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 13:53:01,003 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 13:53:01,003 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:53:01] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 13:53:01,070 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 13:53:01,080 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:53:01] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 13:53:01,294 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:53:01] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 13:53:01,404 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:53:01] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 13:53:01,733 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:53:01] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=MfFuU5wJwdUR7oXOqyYo HTTP/1.1" 200 -
+2025-05-03 13:53:01,734 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 13:53:01] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 13:55:54,126 - werkzeug - INFO -  * Detected change in 'D:\\test\\controllers\\message_controller.py', reloading
+2025-05-03 13:55:54,235 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 14:04:44,178 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:04:44,201 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 14:04:44,201 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 14:04:44,202 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 14:04:44,998 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 14:04:44,998 - mail.log - INFO - Peer: ('127.0.0.1', 51516)
+2025-05-03 14:04:44,998 - mail.log - INFO - ('127.0.0.1', 51516) handling connection
+2025-05-03 14:04:44,998 - mail.log - INFO - ('127.0.0.1', 51516) EOF received
+2025-05-03 14:04:44,998 - mail.log - INFO - ('127.0.0.1', 51516) Connection lost during _handle_client()
+2025-05-03 14:04:44,998 - mail.log - INFO - ('127.0.0.1', 51516) connection lost
+2025-05-03 14:04:45,075 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:04:45,084 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 14:04:45,085 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 14:04:46,924 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 14:04:46,927 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 14:04:46,927 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:04:46] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 14:04:46,968 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 14:04:46,979 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:04:46] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 14:04:47,220 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:04:47] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 14:04:47,296 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:04:47] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 14:04:47,638 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:04:47] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=7hlvaJgTAQDGtQpJJBEA HTTP/1.1" 200 -
+2025-05-03 14:04:47,638 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:04:47] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 14:05:52,670 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:05:52,682 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 14:05:52,682 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 14:05:52,683 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 14:05:53,510 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 14:05:53,510 - mail.log - INFO - Peer: ('127.0.0.1', 51572)
+2025-05-03 14:05:53,510 - mail.log - INFO - ('127.0.0.1', 51572) handling connection
+2025-05-03 14:05:53,520 - mail.log - INFO - ('127.0.0.1', 51572) EOF received
+2025-05-03 14:05:53,521 - mail.log - INFO - ('127.0.0.1', 51572) Connection lost during _handle_client()
+2025-05-03 14:05:53,521 - mail.log - INFO - ('127.0.0.1', 51572) connection lost
+2025-05-03 14:05:53,617 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:05:53,625 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 14:05:53,627 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 14:05:55,168 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 14:05:55,172 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 14:05:55,172 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:05:55] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 14:05:55,263 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 14:05:55,271 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:05:55] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 14:05:55,465 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:05:55] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 14:05:55,600 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:05:55] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 14:05:55,938 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:05:55] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=GXeUlNM3GVbsABcKnt6s HTTP/1.1" 200 -
+2025-05-03 14:05:55,939 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:05:55] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 14:16:08,706 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:16:08,719 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 14:16:08,719 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 14:16:08,720 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 14:16:09,490 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 14:16:09,490 - mail.log - INFO - Peer: ('127.0.0.1', 51799)
+2025-05-03 14:16:09,490 - mail.log - INFO - ('127.0.0.1', 51799) handling connection
+2025-05-03 14:16:09,505 - mail.log - INFO - ('127.0.0.1', 51799) EOF received
+2025-05-03 14:16:09,505 - mail.log - INFO - ('127.0.0.1', 51799) Connection lost during _handle_client()
+2025-05-03 14:16:09,505 - mail.log - INFO - ('127.0.0.1', 51799) connection lost
+2025-05-03 14:16:09,578 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:16:09,586 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 14:16:09,588 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 14:16:11,715 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 14:16:11,719 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 14:16:11,720 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:16:11] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 14:16:11,790 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 14:16:11,802 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:16:11] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 14:16:12,011 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:16:12] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 14:16:12,136 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:16:12] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 14:16:12,477 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:16:12] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=e31OZrCa97lywh23oChM HTTP/1.1" 200 -
+2025-05-03 14:16:12,478 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:16:12] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 14:20:45,361 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:20:45,379 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 14:20:45,379 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 14:20:45,380 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 14:20:46,192 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 14:20:46,193 - mail.log - INFO - Peer: ('127.0.0.1', 51921)
+2025-05-03 14:20:46,193 - mail.log - INFO - ('127.0.0.1', 51921) handling connection
+2025-05-03 14:20:46,193 - mail.log - INFO - ('127.0.0.1', 51921) EOF received
+2025-05-03 14:20:46,193 - mail.log - INFO - ('127.0.0.1', 51921) Connection lost during _handle_client()
+2025-05-03 14:20:46,193 - mail.log - INFO - ('127.0.0.1', 51921) connection lost
+2025-05-03 14:20:46,268 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:20:46,277 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 14:20:46,278 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 14:20:47,702 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 14:20:47,707 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 14:20:47,707 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:20:47] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 14:20:47,788 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 14:20:47,795 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:20:47] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 14:20:47,981 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:20:47] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 14:20:48,120 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:20:48] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 14:20:48,462 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:20:48] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=UL0uM4FZwh9T7fOQJRZV HTTP/1.1" 200 -
+2025-05-03 14:20:48,463 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:20:48] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 14:24:25,819 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:24:25,838 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.253.27.172:5000
+2025-05-03 14:24:25,839 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-03 14:24:25,839 - werkzeug - INFO -  * Restarting with stat
+2025-05-03 14:24:26,654 - mail.log - INFO - Available AUTH mechanisms: LOGIN(builtin) PLAIN(builtin)
+2025-05-03 14:24:26,654 - mail.log - INFO - Peer: ('127.0.0.1', 52040)
+2025-05-03 14:24:26,655 - mail.log - INFO - ('127.0.0.1', 52040) handling connection
+2025-05-03 14:24:26,655 - mail.log - INFO - ('127.0.0.1', 52040) EOF received
+2025-05-03 14:24:26,655 - mail.log - INFO - ('127.0.0.1', 52040) Connection lost during _handle_client()
+2025-05-03 14:24:26,655 - mail.log - INFO - ('127.0.0.1', 52040) connection lost
+2025-05-03 14:24:26,743 - __main__ - INFO - Êý¾Ý¿âÁ¬½Ó³É¹¦
+2025-05-03 14:24:26,752 - werkzeug - WARNING -  * Debugger is active!
+2025-05-03 14:24:26,753 - werkzeug - INFO -  * Debugger PIN: 275-237-654
+2025-05-03 14:24:28,317 - __main__ - INFO - User 7 accessed main.index
+2025-05-03 14:24:28,323 - __main__ - INFO - ±¾µØSMTP·þÎñÆ÷ÒÑÍ£Ö¹
+2025-05-03 14:24:28,323 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:24:28] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-03 14:24:28,392 - __main__ - ERROR - Í£Ö¹SMTP·þÎñÆ÷³ö´í: SMTP daemon not running
+2025-05-03 14:24:28,403 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:24:28] "[35m[1mGET /user/dashboard HTTP/1.1[0m" 500 -
+2025-05-03 14:24:28,608 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:24:28] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-03 14:24:28,722 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:24:28] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-03 14:24:29,050 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:24:29] "GET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png&s=IXObV5XFRzwrGbROJBio HTTP/1.1" 200 -
+2025-05-03 14:24:29,051 - werkzeug - INFO - 127.0.0.1 - - [03/May/2025 14:24:29] "[36mGET /user/dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-03 15:15:13,196 - werkzeug - INFO -  * Detected change in 'D:\\test\\models\\UserModel.py', reloading
+2025-05-03 15:15:13,461 - werkzeug - INFO -  * Restarting with stat

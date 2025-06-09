@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Set E-DBA Bank Account - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Set E-DBA System Bank Account</h2>
+            <p class="mb-4">Please set the bank account for the E-DBA platform, which will be used to collect membership
+                and service fees.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Bank Account Information</h5>
+                </div>
+                <div class="card-body">
+                    {% if success_message %}
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i> {{ success_message }}
+                    </div>
+                    {% endif %}
+
+                    {% if error_message %}
+                    <div class="alert alert-danger">
+                        <i class="fas fa-exclamation-circle me-2"></i> {{ error_message }}
+                    </div>
+                    {% endif %}
+
+                    <form action="{{ url_for('admin.setup_bank_account') }}" method="post">
+
+                        <div class="mb-3">
+                            <label for="bank_name" class="form-label">Bank Name</label>
+                            <input type="text" class="form-control" id="bank_name" name="bank_name"
+                                value="{{ current_account.bank_name if current_account else '' }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="account_name" class="form-label">Account Name</label>
+                            <input type="text" class="form-control" id="account_name" name="account_name"
+                                value="{{ current_account.account_name if current_account else '' }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="account_number" class="form-label">Account Number</label>
+                            <input type="text" class="form-control" id="account_number" name="account_number"
+                                value="{{ current_account.account_number if current_account else '' }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Account Password</label>
+                            <input type="password" class="form-control" id="password" name="password" {% if not
+                                current_account %}required{% endif %}>
+                            {% if current_account %}
+                            <small class="text-muted">Leave blank if you do not wish to change the password</small>
+                            {% endif %}
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{ url_for('admin.eadmin_dashboard') }}" class="btn btn-secondary me-md-2">
+                                <i class="fas fa-arrow-left me-1"></i> Back
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-1"></i> Save Settings
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">Note</h5>
+                </div>
+                <div class="card-body">
+                    <p><i class="fas fa-info-circle me-2"></i> The E-DBA system bank account is used for:</p>
+                    <ul>
+                        <li>Collecting organization membership fees</li>
+                        <li>Collecting service usage fees</li>
+                        <li>Fund settlement and distribution</li>
+                    </ul>
+                    <p class="mb-0 text-danger">
+                        <i class="fas fa-exclamation-triangle me-2"></i> Please ensure the bank account information
+                        entered is accurate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

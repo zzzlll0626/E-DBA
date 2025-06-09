@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}Batch Student Record Query Results - E-DBA{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="mb-3">Batch Student Record Query Results</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('user.dashboard') }}">My Dashboard</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('user.view_organization', org_id=provider_organization.organization_id) }}">{{
+                            provider_organization.short_name }}</a></li>
+                    <li class="breadcrumb-item"><a
+                            href="{{ url_for('consumer.student_record', service_id=service.service_id) }}">Student
+                            Record Query</a></li>
+                    <li class="breadcrumb-item active">Batch Results</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Summary of Results</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Total Records</h6>
+                                    <p class="display-6">{{ total }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-success text-white mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Successful Queries</h6>
+                                    <p class="display-6">{{ success_count }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-danger text-white mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Failed Queries</h6>
+                                    <p class="display-6">{{ total- success_count}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Detailed Results</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Student Name</th>
+                                    <th>Student ID</th>
+                                    <th>Enrollment Year</th>
+                                    <th>Graduation Year</th>
+                                    <th>GPA</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for result in results %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ result.name }}</td>
+                                    <td>{{ result.student_id }}</td>
+                                    <td>
+                                        {% if result.enroll_year %}
+                                        {{ result.enroll_year }}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if result.graduation_year %}
+                                        {{ result.graduation_year }}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if result.gpa %}
+                                        {{ result.gpa }}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if result.error %}
+                                        <span class="badge bg-danger">Failed</span>
+                                        <span class="text-danger">{{ result.error }}</span>
+                                        {% else %}
+                                        <span class="badge bg-success">Success</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{{ url_for('consumer.student_record', service_id=service.service_id) }}"
+                        class="btn btn-primary">
+                        <i class="fas fa-redo me-1"></i> Back to Query
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
